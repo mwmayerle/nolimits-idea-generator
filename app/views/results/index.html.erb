@@ -1,0 +1,117 @@
+<div class="container">
+	<div class="row">
+		<h1>No Limits Idea Generator</h1>
+	</div>
+
+	<form class="form-control" action="/results", method="POST">
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+		<div class="form-group">
+			<h3>Pre-Ride Selection Preferences</h3>
+		</div>
+
+		<div class="form-group">
+			<label class="form-check-label">
+				How do you feel about rides designed around inversions?
+			</label>
+			<div class="form-check">
+		  	<input type="radio" class="form-check-input" name="inversions" value="yes">Inversions only
+		  </div>
+		  <div class="form-check">
+		  	<input type="radio" class="form-check-input" name="inversions" value="no">No inversions
+		  </div>
+		  <div class="form-check">
+		  	<input type="radio" class="form-check-input" name="inversions" value="indifferent" checked>Either one works
+		  </div>
+		</div>
+
+		<div class="form-group">
+		  <label class="form-check-label">
+		  	How do you feel about launched rides?
+		  </label>
+		  <div class="form-check">
+		  	<input type="radio" class="form-check-input" name="launch" value="yes">I only want to build launched rides
+			</div>
+			<div class="form-check">
+		  	<input type="radio" class="form-check-input" name="launch" value="no">I want to stick to the traditional lift hill
+		  </div>
+		  <div class="form-check">
+		  	<input type="radio" class="form-check-input" name="launch" value="indifferent" checked>No Preference
+		  </div>
+		</div>
+
+		<div class="form-group">
+		  <label class="form-check-label">
+		  	Would you like to include more challenging ride styles? Rides where you need to control G's like a wing coaster or motorbike are more challenging:
+			</label>
+		  <div class="form-check">
+		  	<input type="radio" class="form-check-input" name="difficulty" value="yes">Exclusively challenging rides
+		  </div>
+		  <div class="form-check">
+		  	<input type="radio" class="form-check-input" name="difficulty" value="no">Exclusively less challenging rides
+		  </div>
+		  <div class="form-check">
+		  	<input type="radio" class="form-check-input" name="difficulty" value="indifferent" checked>No difficulty preference
+		  </div>
+		</div>
+
+		<div class="form-group">
+			<h3>Post-Ride Selection Preferences</h3>
+		</div>
+
+		<div class="form-group">
+		  <label class="form-check-label">
+		  	Would you prefer a larger or smaller coaster? Larger coasters will also recommend more inversions if the option is selected.
+			</label>
+		  <div class="form-check">
+		  	<input type="radio" class="form-check-input" name="height" value="small">Towards the smaller end of the ride type
+		  </div>
+		  <div class="form-check">
+		  	<input type="radio" class="form-check-input" name="height" value="average">Average height for the style
+		  </div>
+		  <div class="form-check">
+		  	<input type="radio" class="form-check-input" name="height" value="tall">Record breaking huge!
+		  </div>
+		  <div class="form-check">
+		  	<input type="radio" class="form-check-input" name="height" value="indifferent" checked>No preference. Surprise me
+		  </div>
+		</div>
+
+		<div class="form-group">
+		  <label class="form-check-label">Would you like any style-specific restrictions? Restrictions will forbid common design choices and force you to be a bit more creative.</label>
+		  <div class="form-check">
+		  	<input type="radio" class="form-check-input" name="restrictions" value="none">None. I do what I want.
+		  </div>
+		  <div class="form-check">
+		  	<input type="radio" class="form-check-input" name="restrictions" value="few">None. Don't tell me what I can't do.
+		  </div>
+		  <div class="form-check">
+		  	<input type="radio" class="form-check-input" name="restrictions" value="average">I'd like a couple restrictions to make things more interesting.
+		  </div>
+		  <div class="form-check">
+		  	<input type="radio" class="form-check-input" name="restrictions" value="many">Lots of restrictions. Screw tradition
+		  </div>
+		  <div class="form-check">
+		  	<input type="radio" class="form-check-input" name="restrictions" value="indifferent" checked>No preference. Surprise me
+		  </div>
+		</div>
+
+		<div class="form-group">
+		  <label class="form-check-label">Would you like to force any style-specific features? Features force you to include comonly found elements on a given ride style or include plausible elements not yet seen.</label>
+		  <div class="form-check">
+		  	<input type="radio" class="form-check-input" name="elements" value="none">None. I do what I want.
+		  </div>
+		  <div class="form-check">
+		  	<input type="radio" class="form-check-input" name="elements" value="few">I'd like to incorporate a few track elements to make things interesting.
+		  </div>
+		  <div class="form-check">
+		  	<input type="radio" class="form-check-input" name="elements" value="many">I want to try and incorporate many track elements.
+		  </div>
+		  <div class="form-check">
+		  	<input type="radio" class="form-check-input" name="elements" value="indifferent" checked>No preference. Surprise me
+		  </div>
+		</div>
+
+	  <input type="submit" class="btn btn-primary" value="Submit">
+	</form>
+</div>
