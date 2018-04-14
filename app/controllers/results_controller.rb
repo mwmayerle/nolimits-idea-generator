@@ -4,9 +4,9 @@ class ResultsController < ApplicationController
 	end
 
 	def create
-		manufacturer = Manufacturer.find(1)
-		manufacturer = JSON.parse(manufacturer.to_json)
-		products = manufacturer["products"]
+		manufacturers = Manufacturer.all
+		manufacturers = JSON.parse(manufacturers.to_json)
+		products = manufacturers.map { |manufacturer| manufacturer["products"] }.flatten
 		products = Result.process_params(params, products)
 		@results = Result.pick_attributes(params, products)
 		render :show

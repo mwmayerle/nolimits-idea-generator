@@ -1,8 +1,14 @@
 class Result < ApplicationRecord
 
 	def self.process_params(preferences, products)
+		products = filter_by_age(preferences, products)
+		products = filter_by_material(preferences, products)
 		products = filter_by_inversion(preferences, products)
-		products = filter_by_launch(preferences, products)
+
+		if preferences["material"] == "steel" 
+			products = filter_by_launch(preferences, products)
+		end
+
 		products = filter_by_difficulty(preferences, products)
 		products
 	end
@@ -15,6 +21,26 @@ class Result < ApplicationRecord
 		sample_interval = get_sample_interval(preferences, ride, "typical_elements")
 		ride["restricted_elements"] = choose_elements(sample_interval, ride, "typical_elements")
 		ride
+	end
+
+	def self.filter_by_age(preferences, products)
+		case preferences["age"]
+			when "old"
+				products = products.select { |product| product["old"] }
+			when "new"
+				products = products.reject { |product| product["old"] }
+		end
+		products
+	end
+
+	def self.filter_by_material(preferences, products)
+		case preferences["material"]
+			when "wood"
+				products = products.select { |product| product["material"] == "wood" }
+			when "steel"
+				products = products.select { |product| product["material"] == "steel" }
+		end
+		products
 	end
 
 	def self.filter_by_inversion(preferences, products)
@@ -58,7 +84,7 @@ class Result < ApplicationRecord
 		short_min = ride["short"].to_i - (ride["short"].to_i / 6.0)
 		short_max = ride["short"].to_i * 1.2
 
-		tall_max = ride["tall"].to_i * 1.33
+		tall_max = ride["tall"].to_i * 1.2
 		tall_min = ride["tall"].to_i - (ride["tall"].to_i / 6.0)
 				
 		case preferences["height"]
@@ -92,9 +118,11 @@ class Result < ApplicationRecord
 		elements = []
 		while elements.length < sample_interval
 			index = rand(0..(ride[element_type].length - 1))
+
 			if !elements.include?(ride[element_type][index])
 				elements << ride[element_type][index]
 			end
+
 		end
 		elements
 	end

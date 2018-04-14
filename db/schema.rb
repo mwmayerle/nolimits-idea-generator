@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180408181308) do
+ActiveRecord::Schema.define(version: 20180408145243) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,17 +28,14 @@ ActiveRecord::Schema.define(version: 20180408181308) do
     t.integer "short"
     t.integer "max_loops"
     t.integer "min_loops", default: 0
+    t.boolean "old", default: false
     t.boolean "can_invert", default: true
     t.boolean "difficult", default: false
     t.boolean "must_launch", default: false
+    t.string "material", default: "steel"
     t.string "product_name", null: false
     t.string "typical_elements", default: [], array: true
     t.string "plausible_elements", default: [], array: true
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "results", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
