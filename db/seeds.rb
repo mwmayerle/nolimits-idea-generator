@@ -4,6 +4,9 @@ cci = Manufacturer.find_or_create_by!(manufacturer_name: "Custom Coasters Intern
 gg = Manufacturer.find_or_create_by!(manufacturer_name: "Gravity Group")
 intamin = Manufacturer.find_or_create_by!(manufacturer_name: "Intamin")
 freeform = Manufacturer.find_or_create_by!(manufacturer_name: "Freeform")
+schwarzkopf = Manufacturer.find_or_create_by!(manufacturer_name: "Schwarzkopf")
+arrow = Manufacturer.find_or_create_by!(manufacturer_name: "Arrow Dynamics")
+vekoma = Manufacturer.find_or_create_by!(manufacturer_name: "Vekoma")
 
 standupbm = Product.find_or_create_by!(
 	manufacturer_id: b_and_m.id,
@@ -64,7 +67,7 @@ wing_coasterbm = Product.find_or_create_by!(
 
 dive_coasterbm = Product.find_or_create_by!(
 	manufacturer_id: b_and_m.id,
-	product_name: "Dive coaster",
+	product_name: "B&M Dive coaster",
 	tall: 223,
 	short: 123,
 	max_loops: 3,
@@ -76,7 +79,7 @@ dive_coasterbm = Product.find_or_create_by!(
 
 flying_coasterbm = Product.find_or_create_by!(
 	manufacturer_id: b_and_m.id,
-	product_name: "Flying coaster",
+	product_name: "B&M Flying coaster",
 	tall: 170,
 	short: 66,
 	max_loops: 5,
@@ -135,7 +138,7 @@ cci_coaster = Product.find_or_create_by!(
 	min_loops: 0,
 	can_invert: false,
 	difficult: false,
-	typical_elements: ["cyclone layout (see Great White)", "terrain (see Boss)", "straight drop", "sprawling layout (see Rampage)", "linear out and back layout (see Shivering Timbers)"],
+	typical_elements: ["cyclone layout (see Great White)", "terrain (see Boss)", "straight drop", "sprawling layout (see Rampage)", "linear out and back layout (see Shivering Timbers)", "2-seat PTCs"],
 	plausible_elements: ["trenches", "double-up", "double-down", "heavy lateral G helix (see Boss)", "twisting drop (see Medusa - SFM)", "trick-track - see Shivering Timbers (before it was taken out)", "steel structure", "above-ground tunnels", "minimal banking (see Legend)", "section obviously reprofiled by GCI (see Boulder Dash)", "S-hill", "prelift section", "second largest hill isn't right after the first drop"]
 )
 
@@ -176,7 +179,7 @@ freeform_woodie = Product.find_or_create_by!(
 	min_loops: 0,
 	difficult: false,
 	typical_elements: ["cyclone layout (see Cyclone ( ͡° ͜ʖ ͡°) )", "linear out and back layout", "twister layout"],
-	plausible_elements: ["trenches", "double-up", "double-down", "steel structure", "S-hill", "corkscrew", "zero-g-roll", "tunnel", "Mr. Twister drop", "big helix (see Beast)", "vertical loop (see Son of Beast)", "prelift section", "second largest hill isn't right after the first drop"]
+	plausible_elements: ["trenches", "double-up", "double-down", "steel structure", "S-hill", "corkscrew", "zero-g-roll", "tunnel", "Mr. Twister drop", "big helix (see Beast)", "vertical loop (see Son of Beast)", "prelift section", "second largest hill isn't right after the first drop", "2-seat PTCS", "3-seat PTCS", "Morgan trains", "Timberliners", "overbanked-curve (see Cú Chulainn)"]
 )
 
 freeform_classic_woodie = Product.find_or_create_by!(
@@ -187,8 +190,108 @@ freeform_classic_woodie = Product.find_or_create_by!(
 	short: 66,
 	max_loops: 0,
 	min_loops: 0,
-	difficult: false,
+	difficult: true,
 	old: true,
 	typical_elements: ["cyclone layout (see Cyclone ( ͡° ͜ʖ ͡°) )", "linear out and back layout", "twister layout"],
-	plausible_elements: ["trenches", "double-up", "double-down", "S-hill",  "brutality (see Crystal Beach Cyclone)", "tunnel", "old-timey skid brakes", "Mr. Twister drop", "big helix (see Beast)", "prelift section", "it's white!", "second largest hill isn't right after the first drop", "weird kinked drops (see SFNE Cyclone, ripep)"]
+	plausible_elements: ["trenches", "double-up", "double-down", "S-hill",  "brutality (see Crystal Beach Cyclone)", "tunnel", "old-timey skid brakes (if applicable)", "drop into a big flat turn (see Hurler, Hercules - Dorney Park)", "enormous Dinn/Summers thing (see Mean Streak, Texas Giant, Jupiter)", "Mr. Twister drop", "big helix (see Beast)", "prelift section", "it's white!", "second largest hill isn't right after the first drop", "weird kinked drops (see SFNE Cyclone, ripep)", "2-seat PTCS", "3-seat PTCS", "Morgan trains"]
+)
+
+schwarzkopf = Product.find_or_create_by!(
+	manufacturer_id: schwarzkopf.id,
+	product_name: "Schwarzkopf coaster",
+	tall: 111,
+	short: 66,
+	max_loops: 5,
+	min_loops: 0,
+	difficult: false,
+	old: true,
+	typical_elements: ["double-loop", "helix", "portable", "sprawling layout", "loops-arranged geometrically", "terrain"],
+	plausible_elements: ["no inversions (see Jetline)", "'different' double-loops (see Zonga)", "portable", "tunnels", "trenches", "half-loop half-corkscrews (see Zonga)"]
+)
+
+schwarzkopf = Manufacturer.find_or_create_by!(manufacturer_name: "Schwarzkopf")
+
+schwarzkopf_shuttle = Product.find_or_create_by!(
+	manufacturer_id: schwarzkopf.id,
+	product_name: "Schwarzkopf shuttle coaster",
+	tall: 148,
+	short: 131,
+	max_loops: 3,
+	min_loops: 0,
+	difficult: false,
+	old: true,
+	is_shuttle: true,
+	typical_elements: ["launch", "reverse-tire lift (see Bullet - Selva Mágica)", "tire launch (see Death Train - Marah Land)"],
+	plausible_elements: ["double loop", "turns", "portable", "tunnels", "trenches", "'different' double-loops (see Zonga)", "half-loop half-corkscrews (see Zonga)"]
+)
+
+arrow_looper = Product.find_or_create_by!(
+	manufacturer_id: arrow.id,
+	product_name: "Arrow looping coaster",
+	tall: 188,
+	short: 70,
+	max_loops: 7,
+	min_loops: 2,
+	difficult: false,
+	old: true,
+	typical_elements: ["double loop", "double corkscrew", "sprawling layout", "terrain", "batwing"],
+	plausible_elements: ["elevated single loop (see Viper - SFMM)", "triple corkscrew (see Fantasia Special	- Tongdo Fantasia)", "bowtie (see Dragon Mountain)", "interlocking loops (see Loch Ness Monster)", "airtime hills", "corkscrews aren't last (see Vortex - Kings Island", "cobra roll (see Drachen Fire)", "wraparound corkscrew (see Drachen Fire)", "cutback (see Drachen Fire)", "corkscrews aren't one after the other", "trench", "tunnel", "terrible helices (see Anaconda - Kings Dominion)", "sidewinder/immelman (see Ninja SF St. Louis)", "reverse sidewinder/dive loop"]
+)
+
+vekoma_looper = Product.find_or_create_by!(
+	manufacturer_id: vekoma.id,
+	product_name: "Vekoma looping coaster",
+	tall: 188,
+	short: 65,
+	max_loops: 7,
+	min_loops: 2,
+	difficult: false,
+	typical_elements: ["double loop", "double corkscrew", "sprawling layout", "terrain", "batwing"],
+	plausible_elements: ["triple corkscrew (see Fantasia Special - Tongdo Fantasia)", "bowtie (see Dragon Mountain)","corkscrews aren't last (see Vortex - Kings Island", "cobra roll (see Drachen Fire)", "corkscrews aren't one after the other", "trench", "tunnel", "butterfly (see Blue Hawk)", "sidewinder/immelman (see Ninja SF St. Louis)", "reverse sidewinder/dive loop", "more modern design (see Millennium Coaster)", "helix drop (see Horror Express)", "sea serpent (see Xpress)", "tilt drop (see Gravity Max)", "flat launch (see Xpress)", "inclined launch (see Space Mountain: Mission 2)", "spaghetti-bowl style (see Xpress)"]
+)
+
+vekoma = Manufacturer.find_or_create_by!(manufacturer_name: "Vekoma")
+
+vekoma_flyer =  Product.find_or_create_by!(
+	manufacturer_id: vekoma.id,
+	product_name: "Vekoma flying coaster",
+	tall: 115,
+	short: 105,
+	max_loops: 5,
+	min_loops: 1,
+	difficult: true,
+	typical_elements: ["horseshoe"],
+	plausible_elements: ["fly to lie", "lie to fly", "vertical loop", "barrel roll", "corkscrew", "helix", "tiny compact Stingray model"]
+)
+
+vekoma = Manufacturer.find_or_create_by!(manufacturer_name: "Vekoma")
+
+vekoma_shuttle = Product.find_or_create_by!(
+	manufacturer_id: vekoma.id,
+	product_name: "Vekoma shuttle coaster",
+	tall: 117,
+	short: 117,
+	max_loops: 6,
+	min_loops: 2,
+	difficult: false,
+	old: true,
+	is_shuttle: true,
+	typical_elements: ["cobra roll", "vertical loop"],
+	plausible_elements: ["double loop", "turns", "portable", "tunnels", "trenches", "corkscrews", "sidewinder/immelman (see Ninja SF St. Louis)", "reverse sidewinder/dive loop", "bowtie (see Dragon Mountain)", "sea serpent (see Xpress)" ]
+)
+
+arrow = Manufacturer.find_or_create_by!(manufacturer_name: "Arrow Dynamics")
+
+arrow_suspended = Product.find_or_create_by!(
+	manufacturer_id: arrow.id,
+	product_name: "Arrow suspended coaster",
+	tall: 140,
+	short: 81,
+	max_loops: 0,
+	min_loops: 0,
+	difficult: false,
+	old: true,
+	can_invert: false,
+	typical_elements: ["terrain", "double-lift"],
+	plausible_elements: ["pretzel knot (see Iron Dragon)", "straight drop", "S-drop", "tunnels", "trenches"]
 )
