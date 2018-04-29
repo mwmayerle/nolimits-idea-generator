@@ -5,8 +5,6 @@ class CreateProducts < ActiveRecord::Migration[5.1]
 
     	t.integer  :tall
     	t.integer  :short
-    	t.integer  :max_loops
-    	t.integer  :min_loops, default: 0
 
     	t.boolean  :old, default: false
     	t.boolean  :can_invert, default: true

@@ -26,8 +26,6 @@ ActiveRecord::Schema.define(version: 20180408145243) do
     t.integer "manufacturer_id", null: false
     t.integer "tall"
     t.integer "short"
-    t.integer "max_loops"
-    t.integer "min_loops", default: 0
     t.boolean "old", default: false
     t.boolean "can_invert", default: true
     t.boolean "difficult", default: false
