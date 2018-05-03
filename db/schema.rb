@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20180408145243) do
     t.boolean "can_invert", default: true
     t.boolean "difficult", default: false
     t.boolean "must_launch", default: false
+    t.boolean "can_launch", default: true
     t.boolean "is_shuttle", default: false
     t.string "material", default: "steel"
     t.string "product_name", null: false

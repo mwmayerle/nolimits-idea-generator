@@ -1,7 +1,8 @@
 <% if @results %>
 	<h1>NLC Idea Generator Recommends...</h1>
+	<br>
 	<p>Build a <%= @results["product_name"] %> around <%= @results["recommended_height"].to_s %>ft tall.</p>
-
+	<br>
 	<% if @results["plausible_elements"] %>
  		<p>Try to include the following:</p>
  		<ul>
@@ -10,7 +11,7 @@
  		<% end %>
  		</ul>
  	<% end %>
-
+	<br>
  	<% if @results["restricted_elements"] %>
  		<p>Try to avoid the following:</p>
  		<ul>
@@ -20,3 +21,6 @@
  		</ul>
  	<% end %>
 <% end %>
+<br>
+<%= link_to "Change preferences", root_path, class: "btn btn-success"%>
+<%= link_to "Give me another idea", @result, method: 'post', class: "btn btn-primary"%>

@@ -63,8 +63,13 @@ class Result < ApplicationRecord
 	end
 
 	def self.filter_by_launch(preferences, products)
-		if preferences["must_launch"] == "yes"
-			products = products.select { |product| product["must_launch"] }
+		case preferences["launch"]
+		when "yes"
+			products = products.select { |product| product["launch"] || product["can_launch"] }
+		when "maybe"
+			products = products.select { product["can_launch"] }
+		when "no"
+			products = products.reject { |product| product["launch"] || product["can_launch"] }
 		end
 		products
 	end

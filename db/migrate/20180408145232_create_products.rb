@@ -10,6 +10,7 @@ class CreateProducts < ActiveRecord::Migration[5.1]
     	t.boolean  :can_invert, default: true
     	t.boolean  :difficult, default: false
     	t.boolean  :must_launch, default: false
+    	t.boolean  :can_launch, default: true
     	t.boolean  :is_shuttle, default: false
 
     	t.string   :material, default: "steel"
