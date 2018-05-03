@@ -361,5 +361,5 @@ gerst_infinity = Product.find_or_create_by!(
 	short: 80,
 	difficult: true,
 	typical_elements: ["vertical lift", "beyond-vertical drop", "cobra roll", "dive loop into a tunnel"],
-	plausible_elements: ["overbanked turn", "tophat", "launch", "fat loop", "vertical loop", "immelman", "sea serpent", "staffordshire knot (see Smiler)", "norwegian loop", "Gerstlauer-style dive loop (see Smiler, the entrance is straight)", "corkscrew", "barrel rolls", "the abomination/twisty thing on the Mystery Mine finale", "banana roll", "cutback", "air hill", "s-hill", "trenches", "tunnels", "prelift barrel roll", "launch and a lift (see Takabisha)", "not quite a loop and not quite a corkscrew (see Hangtime)", "inversion drop (see Smiler)"]
+	plausible_elements: ["overbanked turn", "tophat", "launch", "fat loop", "vertical loop", "immelman", "sea serpent", "staffordshire knot (see Smiler)", "norwegian loop", "Gerstlauer-style dive loop (see Smiler, the entrance is straight)", "corkscrew", "barrel rolls", "the abomination/twisty thing on the Mystery Mine finale", "banana roll", "cutback", "air hill", "s-hill", "trenches", "tunnels", "prelift barrel roll", "launch and a lift (see Takabisha)", "not quite a loop and not quite a corkscrew (see Hangtime)", "inversion drop (see Smiler)", "holding brake (see Hangtime)"]
 )
