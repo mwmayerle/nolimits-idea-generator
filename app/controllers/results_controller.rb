@@ -1,7 +1,7 @@
 class ResultsController < ApplicationController
 
 	def index
-		session.clear
+		session[:params] = nil
 	end
 
 	def create
