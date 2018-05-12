@@ -5,10 +5,11 @@ gg = Manufacturer.find_or_create_by!(manufacturer_name: "Gravity Group")
 intamin = Manufacturer.find_or_create_by!(manufacturer_name: "Intamin")
 freeform = Manufacturer.find_or_create_by!(manufacturer_name: "Freeform")
 schwarzkopf = Manufacturer.find_or_create_by!(manufacturer_name: "Schwarzkopf")
-arrow = Manufacturer.find_or_create_by!(manufacturer_name: "Arrow Dynamics")
+arrow = Manufacturer.find_or_create_by!(manufacturer_name: "Arrow Dynamics (includes 4th dimensions)")
 vekoma = Manufacturer.find_or_create_by!(manufacturer_name: "Vekoma")
 gerstlauer = Manufacturer.find_or_create_by!(manufacturer_name: "Gerstlauer")
 maurer = Manufacturer.find_or_create_by!(manufacturer_name: "Maurer Sohne")
+premier = Manufacturer.find_or_create_by!(manufacturer_name: "Premier")
 
 standupbm = Product.find_or_create_by!(
 	manufacturer_id: b_and_m.id,
@@ -246,7 +247,7 @@ vekoma_shuttle = Product.find_or_create_by!(
 	old: true,
 	is_shuttle: true,
 	typical_elements: ["cobra roll", "vertical loop"],
-	plausible_elements: ["double loop", "turns", "portable", "tunnels", "trenches", "corkscrews", "sidewinder/immelman (see Ninja SF St. Louis)", "reverse sidewinder/dive loop", "bowtie (see Dragon Mountain)", "sea serpent (see Xpress)" ]
+	plausible_elements: ["double loop", "turns", "portable", "tunnels", "trenches", "corkscrews", "sidewinder/immelman (see Ninja SF St. Louis)", "reverse sidewinder/dive loop", "bowtie (see Dragon Mountain)", "sea serpent (see Xpress)" "actually use the Face Off trains (ignore this and you're a wuss)", "next-generation Boomerang"]
 )
 
 vekoma_motorbike =  Product.find_or_create_by!(
@@ -383,9 +384,20 @@ gerst_bobsled = Product.find_or_create_by!(
 	plausible_elements: ["tunnels", "overbanked turn", "double-up", "double-down", 'outer-banked curve']
 )
 
+gerst_spinner = Product.find_or_create_by!(
+	manufacturer_id: gerstlauer.id,
+	product_name: "Gerstlauer spinning coaster",
+	tall: 85,
+	short: 50,
+	can_launch: true,
+	difficult: false,
+	typical_elements: ["wild mouse turns", "helices", "s-hill", "trenches"],
+	plausible_elements: ["tunnels", "overbanked turn", "double-up", "double-down", "corkscrew (see Veil of Dark - The Shooting Coaster)", "JUST KIDDING NOW MAKE IT A ZAMPERLA SPINNER AHAHAHAHAHA!!!!!", "inclined loop"]
+)
+
 launched_maurer_x_car = Product.find_or_create_by!(
 	manufacturer_id: maurer.id,
-	product_name: "Custom Maurer X-Car",
+	product_name: "Launched Maurer X-Car",
 	tall: 79,
 	short: 50,
 	difficult: false,
@@ -395,11 +407,44 @@ launched_maurer_x_car = Product.find_or_create_by!(
 
 skyloop_maurer_x_car = Product.find_or_create_by!(
 	manufacturer_id: maurer.id,
-	product_name: "Launched X Car",
+	product_name: "Maurer X-Car",
 	tall: 167,
 	short: 79,
 	difficult: false,
 	can_launch: false,
 	typical_elements: ["non-inverting loop (see Hollywood Rip Rockit", "vertical inversion lift (see any Skyloop)", "bent-Cuban-8 (see G Force at Drayton Manor"],
 	plausible_elements: ["tunnels", "overbanked turn", "double-up", "double-down", 'outer-banked curve', "s-hill", "trenches", "stengal dive", "immelman", "make an 'extension' of a skyloop model (see Abismo)", "barrel roll"]
+)
+
+maurer_spinner = Product.find_or_create_by!(
+	manufacturer_id: maurer.id,
+	product_name: "Maurer Spinning Coaster",
+	tall: 84,
+	short: 40,
+	difficult: false,
+	can_launch: false,
+	typical_elements: ["vertical turn (see Dragons Fury)", "wild mouse turns"],
+	plausible_elements: ["tunnels", "overbanked turn", "double-up", "double-down", 'outer-banked curve', "s-hill", "trenches", "stengal dive", "JUST KIDDING NOW MAKE IT A ZAMPERLA SPINNER AHAHAHAHAHA!!!!!", "inclined loop"]
+)
+
+premier_shuttle = Product.find_or_create_by!(
+	manufacturer_id: premier.id,
+	product_name: "Premier Shuttle Coaster",
+	tall: 224,
+	short: 164,
+	difficult: false,
+	is_shuttle: true,
+	typical_elements: ["inverted tophat", "overbanked turn"],
+	plausible_elements: ["cobra roll", "zero g roll", "dive loop", "immelman", "vertical loop", "corkscrew", "vertical spike", "stengal dive", "non-inverting loop", "s-hill", "air hill", "vertical loop"]
+)
+
+premier_launcher = Product.find_or_create_by!(
+	manufacturer_id: premier.id,
+	product_name: "Premier Launch Coaster",
+	tall: 160,
+	short: 150,
+	difficult: false,
+	is_shuttle: true,
+	typical_elements: ["multi-launch (see Full Throttle)", "cobra roll", "spaghetti-bowl"],
+	plausible_elements: ["cobra roll", "zero g roll", "dive loop", "immelman", "vertical loop", "corkscrew", "inclined launch", "barrel roll", "s-hill", "air hill", "vertical loop", "loop is combined with another element like an air hill (see Full Throttle)"]
 )

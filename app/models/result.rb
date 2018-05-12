@@ -5,15 +5,14 @@ class Result < ApplicationRecord
 		products = filter_by_material(preferences, products)
 		products = filter_by_shuttle(preferences, products)
 		products = filter_by_inversion(preferences, products)
-		if preferences["material"] == "steel" 
-			products = filter_by_launch(preferences, products)
-		end
+		products = filter_by_launch(preferences, products) if preferences["material"] == "steel" 
 		products = filter_by_difficulty(preferences, products)
 		products
 	end
 
 	def self.pick_attributes(preferences, products)
 		ride = randomly_choose_product(products)
+		ride["terrain"] = add_terrain_restriction(preferences) if preferences["terrain"] == "on"
 		ride = get_height_range(preferences, ride)
 		sample_interval = get_sample_interval(preferences, ride, "plausible_elements")
 		ride["plausible_elements"] = choose_elements(sample_interval, ride, "plausible_elements")
@@ -92,14 +91,14 @@ class Result < ApplicationRecord
 
 	def self.get_height_range(preferences, ride)
 		average = ride["tall"].to_i + (ride["short"].to_i / 2.0)
-		average_min = average - (average / 6.66)
-		average_max = average + (average / 6.66)
+		average_min = average - (average / 7.0)
+		average_max = average + (average / 7.0)
 
-		short_min = ride["short"].to_i - (ride["short"].to_i / 6.66)
+		short_min = ride["short"].to_i - (ride["short"].to_i / 7.0)
 		short_max = ride["short"].to_i * 1.15
 
 		tall_max = ride["tall"].to_i * 1.15
-		tall_min = ride["tall"].to_i - (ride["tall"].to_i / 6.66)
+		tall_min = ride["tall"].to_i - (ride["tall"].to_i / 7.0)
 				
 		case preferences["height"]
 			when "indifferent"
@@ -137,6 +136,10 @@ class Result < ApplicationRecord
 			end
 		end
 		elements
+	end
+
+	def self.add_terrain_restriction(preferences)
+		["cross-over a river multiple times, but you can't put supports in the water", "be built over the side of a lake, but you can't put supports in the water", "have the station be the highest point of the ride", "be less than 50ft above ground level", "be built up the side of a hill", "have terrain that forces the first drop to not be the largest drop"].sample
 	end
 
 end

@@ -20,6 +20,9 @@
  		<% end %>
  		</ul>
  	<% end %>
+ 	<% if @results["terrain"] %>
+ 		<p>Terrain Restrictions: <%= @results["terrain"] %></p>
+ 	<% end %>
 <% end %>
 <br>
 <%= link_to "Change preferences", root_path, class: "btn btn-success"%>
