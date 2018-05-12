@@ -139,7 +139,7 @@ class Result < ApplicationRecord
 	end
 
 	def self.add_terrain_restriction(preferences)
-		["cross-over a river multiple times, but you can't put supports in the water", "be built over the side of a lake, but you can't put supports in the water", "have the station be the highest point of the ride", "be less than 50ft above ground level", "be built up the side of a hill", "have terrain that forces the first drop to not be the largest drop"].sample
+		["cross-over a river multiple times, but you can't put supports in the water", "be built over the side of a lake, but you can't put supports in the water", "have the station be the highest point of the ride", "be less than 50ft above ground level", "be built up the side of a hill", "have terrain that forces the first drop to not be the largest drop", "the whole thing is in a giant hole like everything at Alton Towers"].sample
 	end
 
 end
