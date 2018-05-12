@@ -9,9 +9,14 @@ class ResultsController < ApplicationController
 		manufacturers = Manufacturer.all
 		session[:id] ||= params
 		manufacturers = JSON.parse(manufacturers.to_json)
-		products = manufacturers.map { |manufacturer| manufacturer["products"] }.flatten
-		products = Result.process_params(session[:id], products)
-		@results = Result.pick_attributes(session[:id], products)
+		begin
+			products = manufacturers.map { |manufacturer| manufacturer["products"] }.flatten
+			products = Result.process_params(session[:id], products)
+			@results = Result.pick_attributes(session[:id], products)
+		rescue
+			flash[:error] = "Incompatible choices, please try different preferences"
+			redirect_to root_path and return
+		end
 		render :show
 	end
 

@@ -3,6 +3,12 @@
 		<h1>No Limits Idea Generator</h1>
 	</div>
 
+	<% if flash[:error] %>
+		<div class="alert alert-danger">
+			<p class="danger"> <%= flash[:error] %> </p>
+		</div>
+	<% end %>
+
 	<form class="form-control" action="/results", method="POST">
 		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
