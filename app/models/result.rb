@@ -92,14 +92,14 @@ class Result < ApplicationRecord
 
 	def self.get_height_range(preferences, ride)
 		average = ride["tall"].to_i + (ride["short"].to_i / 2.0)
-		average_min = average - (average / 6.0)
-		average_max = average + (average / 6.0)
+		average_min = average - (average / 6.66)
+		average_max = average + (average / 6.66)
 
-		short_min = ride["short"].to_i - (ride["short"].to_i / 6.0)
+		short_min = ride["short"].to_i - (ride["short"].to_i / 6.66)
 		short_max = ride["short"].to_i * 1.15
 
 		tall_max = ride["tall"].to_i * 1.15
-		tall_min = ride["tall"].to_i - (ride["tall"].to_i / 6.0)
+		tall_min = ride["tall"].to_i - (ride["tall"].to_i / 6.66)
 				
 		case preferences["height"]
 			when "indifferent"

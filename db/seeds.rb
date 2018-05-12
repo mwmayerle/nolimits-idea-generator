@@ -8,6 +8,7 @@ schwarzkopf = Manufacturer.find_or_create_by!(manufacturer_name: "Schwarzkopf")
 arrow = Manufacturer.find_or_create_by!(manufacturer_name: "Arrow Dynamics")
 vekoma = Manufacturer.find_or_create_by!(manufacturer_name: "Vekoma")
 gerstlauer = Manufacturer.find_or_create_by!(manufacturer_name: "Gerstlauer")
+maurer = Manufacturer.find_or_create_by!(manufacturer_name: "Maurer Sohne")
 
 standupbm = Product.find_or_create_by!(
 	manufacturer_id: b_and_m.id,
@@ -44,7 +45,7 @@ invertedbm = Product.find_or_create_by!(
 	tall: 195,
 	short: 85,
 	typical_elements: ["cobra roll", "immelman", "zero G roll", "intense helix (see Raptor)"],
-	plausible_elements: ["small loop in second half (see Montu/Kraken)", "sea serpent (see Medusa SFDK)", "immelman", "dive loop", "batwing (see Montu)", "jojo roll (see Hydra)", "trenches", "overbanked turn (see Silver Bullet", "pretzel knot (see Banshee)", "inclined loop (see Riddler's Revenge)", "barrel roll (see Bandshee)", "Katun drop", "in a hole (see Nemesis/Black Mamba)", "large corkscrew (see Hydra)", "high in the air turn (see Superman SFFT, Thunderbird - Holiday World, Rougarou)", "flat launch (see Thunderbird - Holiday Park)", "inclined launch (see Incredible Hulk)", "air hill (see Dueling Dragons, ripep"]
+	plausible_elements: ["small loop in second half (see Montu/Kraken)", "sea serpent (see Medusa SFDK)", "immelman", "dive loop", "batwing (see Montu)", "jojo roll (see Hydra)", "trenches", "overbanked turn (see Silver Bullet", "pretzel knot (see Banshee)", "inclined loop (see Riddler's Revenge)", "barrel roll (see Bandshee)", "Katun drop", "in a hole (see Nemesis/Black Mamba)", "large corkscrew (see Hydra)", "high in the air turn (see Superman SFFT, Thunderbird - Holiday World, Rougarou)", "flat launch (see Thunderbird - Holiday Park)", "inclined launch (see Incredible Hulk)", "air hill (see Dueling Dragons, ripep)"]
 )
 
 wing_coasterbm = Product.find_or_create_by!(
@@ -346,8 +347,6 @@ intamin_mega = Product.find_or_create_by!(
 	tall: 310,
 	short: 101,
 	difficult: true,
-	can_invert: false,
-	can_launch: false,
 	typical_elements: ["straight drop"],
 	plausible_elements: ["overbanked turn", "trenches", "tunnels", "s-hills", "helix", "very small air hill (see Thunder Dolphin)", "twisted first drop (see Expedition GeForce)", "stengal dive (see Goliath at Walibi)", "double-up", "double-down", "high in the air turnaround before the drop (see Coaster Through the Clouds)", "tight low turns (see Hyperion)", "rapid transitions (see Intimidator 305)", "drop into an intense turn (see Intimidator 305)", "almost but not really a dive loop turnaround", "non-inverting loop (see Soaring with Dragon)"]
 )
@@ -361,5 +360,46 @@ gerst_infinity = Product.find_or_create_by!(
 	short: 80,
 	difficult: true,
 	typical_elements: ["vertical lift", "beyond-vertical drop", "cobra roll", "dive loop into a tunnel"],
-	plausible_elements: ["overbanked turn", "tophat", "launch", "fat loop", "vertical loop", "immelman", "sea serpent", "staffordshire knot (see Smiler)", "norwegian loop", "Gerstlauer-style dive loop (see Smiler, the entrance is straight)", "corkscrew", "barrel rolls", "the abomination/twisty thing on the Mystery Mine finale", "banana roll", "cutback", "air hill", "s-hill", "trenches", "tunnels", "prelift barrel roll", "launch and a lift (see Takabisha)", "not quite a loop and not quite a corkscrew (see Hangtime)", "inversion drop (see Smiler)", "holding brake (see Hangtime)"]
+	plausible_elements: ["overbanked turn", "tophat", "launch", "fat loop", "vertical loop", "immelman", "sea serpent", "staffordshire knot (see Smiler)", "norwegian loop", "Gerstlauer-style dive loop (see Smiler, the entrance is straight)", "corkscrew", "barrel rolls", "the abomination/twisty thing on the Mystery Mine finale", "banana roll", "cutback", "air hill", "s-hill", "trenches", "tunnels", "prelift barrel roll", "launch and a lift (see Takabisha)", "not quite a loop and not quite a corkscrew (see Hangtime)", "inversion drop (see Smiler)", "holding brake (see Hangtime)", "stengal dive", "inclined loop (see Iron Shark)"]
+)
+
+gerst_euro = Product.find_or_create_by!(
+	manufacturer_id: gerstlauer.id,
+	product_name: "Infinity Coaster",
+	tall: 141,
+	short: 72,
+	difficult: true,
+	typical_elements: ["vertical lift", "beyond-vertical drop", "immelman", "portable"],
+	plausible_elements: ["overbanked turn", "tophat", "launch", "fat loop", "vertical loop", "immelman", "sea serpent", "norwegian loop", "Gerstlauer-style dive loop (see Smiler, the entrance is straight)", "corkscrew", "barrel roll", "the abomination/twisty thing on the Mystery Mine finale", "banana roll", "cutback", "air hill", "s-hill", "trenches", "tunnels", "prelift barrel roll", "launch and a lift (see Takabisha)", "not quite a loop and not quite a corkscrew (see Hangtime)", "holding brake (see Takabisha)", "stengal dive", "inclined loop (see Iron Shark)"]
+)
+
+gerst_bobsled = Product.find_or_create_by!(
+	manufacturer_id: gerstlauer.id,
+	product_name: "Gerstlauer bobsled coaster (wild mouse thing)",
+	tall: 63,
+	short: 42,
+	difficult: false,
+	typical_elements: ["wild mouse turns", "intense helix", "multiple air hills", "s-hill", "trenches"],
+	plausible_elements: ["tunnels", "overbanked turn", "double-up", "double-down", 'outer-banked curve']
+)
+
+launched_maurer_x_car = Product.find_or_create_by!(
+	manufacturer_id: maurer.id,
+	product_name: "Custom Maurer X-Car",
+	tall: 79,
+	short: 50,
+	difficult: false,
+	typical_elements: ["tophat", "corkscrew", "vertical loop"],
+	plausible_elements: ["dive loop", "overbanked turn", "double-up", "double-down", 'outer-banked curve', "corkscrew", "immelman", "barrel roll", "tunnels", "trenches"]
+)
+
+skyloop_maurer_x_car = Product.find_or_create_by!(
+	manufacturer_id: maurer.id,
+	product_name: "Launched X Car",
+	tall: 167,
+	short: 79,
+	difficult: false,
+	can_launch: false,
+	typical_elements: ["non-inverting loop (see Hollywood Rip Rockit", "vertical inversion lift (see any Skyloop)", "bent-Cuban-8 (see G Force at Drayton Manor"],
+	plausible_elements: ["tunnels", "overbanked turn", "double-up", "double-down", 'outer-banked curve', "s-hill", "trenches", "stengal dive", "immelman", "make an 'extension' of a skyloop model (see Abismo)", "barrel roll"]
 )
