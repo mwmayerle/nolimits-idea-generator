@@ -5,7 +5,8 @@ class ResultsController < ApplicationController
 	end
 
 	def create
-		session[:id] ||= params.delete("authenticity_token")
+
+		session[:id] ||= params
 		manufacturers = Manufacturer.all
 		manufacturers = JSON.parse(manufacturers.to_json)
 		products = manufacturers.map { |manufacturer| manufacturer["products"] }.flatten
