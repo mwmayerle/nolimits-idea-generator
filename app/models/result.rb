@@ -90,7 +90,7 @@ class Result < ApplicationRecord
 	end
 
 	def self.get_height_range(preferences, ride)
-		average = ride["tall"].to_i + (ride["short"].to_i / 2.0)
+		average = ((ride["tall"].to_i + ride["short"].to_i) / 2.0)
 		average_min = average - (average / 7.0)
 		average_max = average + (average / 7.0)
 
