@@ -94,13 +94,11 @@ class Result < ApplicationRecord
 	def self.randomly_choose_launch(preferences, ride)
 		if ride["must_launch"] == true || preferences["launch"] == "yes"
 			get_launch = true
-		elsif preferences["launch"] == "indifferent"
-			random = rand(3)
-			random == 2 ? get_launch = true : get_launch = false
-		elsif preferences["launch"] == "no"
-			get_launch = false
+		elsif preferences["launch"] == "maybe"
+			random = rand(4)
+			random == 3 ? get_launch = true : get_launch = false
 		else
-			get_launch = true
+			get_launch = false
 		end
 		ride["launch_type"] = ride["launch_options"].sample if get_launch == true
 		ride
