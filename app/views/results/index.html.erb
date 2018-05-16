@@ -1,6 +1,19 @@
 <div class="container">
 	<div class="row">
-		<h1>No Limits Idea Generator</h1>
+		<h1>(>'-')> The No Limits Idea Generator <('-'<)</h1>
+	</div>
+
+	<div class="alert alert-success">
+		<h4 class="success"><u> 04/15/18 Changelog:</u></h4>
+		<ul>
+			<li>Added at least 1 more reasonable element to every track-style</li>
+			<li>Corrected the Eurofighter label to say "Eurofighter" instead of Infinity Coaster </li>
+			<li>Pulled launches out of suggested elements to keep them from conflicting with elements that obviously need a lifthill</li>
+			<li>Added launch styles to each track tyle, when the generator selects a launch, it randomly selects a type of launch</li>
+			<li>Converted 'Terrain Restrictions' to 'Miscellaneous Restrictions' to add more variety</li>
+			<li>Added Vekoma SLCs</li>
+		</ul>
+		<h4 class="success"><u> Coming Soon: Mack full-circuit and Mack launching coasters (forgot these sorry!)</u></h4>
 	</div>
 
 	<% if flash[:error] %>
@@ -161,10 +174,10 @@
 		</div>
 
 		<div class="form-group">
-			<label class="form-check-label">Would you like a terrain restriction thrown at you?
+			<label class="form-check-label">Would you like a miscellaneous restriction (terrain, obstacles, etc) thrown at you?
 				<div class="form-check">
-					<input id="terrain-checkBox" type="checkbox" name="terrain">
-					<label for="terrain-checkBox"> <-- Check me for a terrain restriction</label>
+					<input id="misc-restriction-checkBox" type="checkbox" name="misc_restriction">
+					<label for="misc-restriction-checkBox"> <-- Check me for a miscellaneous restriction</label>
 		  	</div>
 			</label>
 		</div>

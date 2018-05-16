@@ -12,7 +12,9 @@ class Result < ApplicationRecord
 
 	def self.pick_attributes(preferences, products)
 		ride = randomly_choose_product(products)
-		ride["terrain"] = add_terrain_restriction(preferences) if preferences["terrain"] == "on"
+		p preferences
+		ride = randomly_choose_launch(preferences, ride) if ride["can_launch"]
+		ride["misc_restriction"] = add_misc_restriction(preferences) if preferences["misc_restriction"] == "on"
 		ride = get_height_range(preferences, ride)
 		sample_interval = get_sample_interval(preferences, ride, "plausible_elements")
 		ride["plausible_elements"] = choose_elements(sample_interval, ride, "plausible_elements")
@@ -89,6 +91,21 @@ class Result < ApplicationRecord
 		choosen_ride
 	end
 
+	def self.randomly_choose_launch(preferences, ride)
+		if ride["must_launch"] == true || preferences["launch"] == "yes"
+			get_launch = true
+		elsif preferences["launch"] == "indifferent"
+			random = rand(3)
+			random == 2 ? get_launch = true : get_launch = false
+		elsif preferences["launch"] == "no"
+			get_launch = false
+		else
+			get_launch = true
+		end
+		ride["launch_type"] = ride["launch_options"].sample if get_launch == true
+		ride
+	end
+
 	def self.get_height_range(preferences, ride)
 		average = ((ride["tall"].to_i + ride["short"].to_i) / 2.0)
 		average_min = average - (average / 7.0)
@@ -138,8 +155,8 @@ class Result < ApplicationRecord
 		elements
 	end
 
-	def self.add_terrain_restriction(preferences)
-		["cross-over a river multiple times, but you can't put supports in the water", "be built over the side of a lake, but you can't put supports in the water", "have the station be the highest point of the ride", "be less than 50ft above ground level", "be built up the side of a hill", "have terrain that forces the first drop to not be the largest drop", "the whole thing is in a giant hole like everything at Alton Towers"].sample
+	def self.add_misc_restriction(preferences)
+		["cross-over a river multiple times, but you can't put supports in the water", "be built over the side of a lake, but you can't put supports in the water", "on a cliff/in a quarry (see Iron Rattler)", "have the station be the highest point of the ride", "be less than 50ft above ground level", "be built up the side of a hill", "have terrain that forces the first drop to not be the largest drop", "the whole thing is in a giant hole like everything at Alton Towers", "intertwine two ride structures (see Vilda Musen / Jetline at Grona Lund)", "dueling/racing version", "lifthill or launch is the middle of the ride", "build what you were told to build, but instead it's a Chinese-knockoff"].sample
 	end
 
 end

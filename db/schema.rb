@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20180408145243) do
     t.boolean "is_shuttle", default: false
     t.string "material", default: "steel"
     t.string "product_name", null: false
+    t.string "launch_options", default: [], array: true
     t.string "typical_elements", default: [], array: true
     t.string "plausible_elements", default: [], array: true
     t.datetime "created_at", null: false

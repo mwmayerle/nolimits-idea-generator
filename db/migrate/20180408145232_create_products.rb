@@ -15,6 +15,7 @@ class CreateProducts < ActiveRecord::Migration[5.1]
 
     	t.string   :material, default: "steel"
     	t.string   :product_name, null: false
+    	t.string   :launch_options, array: true, default: []
     	t.string   :typical_elements, array: true, default: []
     	t.string   :plausible_elements, array: true, default: []
 

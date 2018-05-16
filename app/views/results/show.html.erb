@@ -3,6 +3,10 @@
 	<br>
 	<p>Build a <%= @results["product_name"] %> around <%= @results["recommended_height"].to_s %>ft tall.</p>
 	<br>
+	<% if @results["launch_type"] %>
+ 		<p>Launch: <%= @results["launch_type"] %></p>
+ 	<% end %>
+
 	<% if @results["plausible_elements"] %>
  		<p>Try to include the following:</p>
  		<ul>
@@ -20,8 +24,8 @@
  		<% end %>
  		</ul>
  	<% end %>
- 	<% if @results["terrain"] %>
- 		<p>Terrain Restrictions: <%= @results["terrain"] %></p>
+ 	<% if @results["misc_restriction"] %>
+ 		<p>Miscellaneous Restriction: <%= @results["misc_restriction"] %></p>
  	<% end %>
 <% end %>
 <br>
