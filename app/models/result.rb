@@ -5,7 +5,7 @@ class Result < ApplicationRecord
 		products = filter_by_material(preferences, products)
 		products = filter_by_shuttle(preferences, products)
 		products = filter_by_inversion(preferences, products)
-		products = filter_by_launch(preferences, products) if preferences["material"] == "steel" 
+		products = filter_by_launch(preferences, products) if preferences["material"] != "wood"
 		products = filter_by_difficulty(preferences, products)
 		products
 	end
@@ -64,11 +64,17 @@ class Result < ApplicationRecord
 	end
 
 	def self.filter_by_launch(preferences, products)
+		p "LAUNCH"
+		p "LAUNCH"
+		p "LAUNCH"
+		p "LAUNCH"
+		p preferences["launch"]
 		case preferences["launch"]
 		when "yes"
-			products = products.select { |product| product["can_launch"] || product["must_launch"] }
+			products = products.select { |product| product["can_launch"] }
+			p products
 		when "maybe"
-			products = products.select { product["can_launch"] || product["must_launch"] }
+			products = products.select { product["can_launch"] }
 		when "no"
 			products = products.reject { |product| product["can_launch"] || product["must_launch"]}
 		end

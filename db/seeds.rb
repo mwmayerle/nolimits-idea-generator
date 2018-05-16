@@ -425,6 +425,7 @@ gerst_spinner = Product.find_or_create_by!(
 	tall: 85,
 	short: 50,
 	difficult: false,
+	can_launch: false,
 	typical_elements: ["wild mouse turns", "helices", "s-hill", "trenches"],
 	plausible_elements: ["tunnels", "overbanked turn", "double-up", "double-down", "corkscrew (see Veil of Dark - The Shooting Coaster)", "JUST KIDDING NOW MAKE IT A ZAMPERLA SPINNER AHAHAHAHAHA!!!!!", "inclined loop", "vertical turn", "stengal dive", "short boosts with tires (see Galaxy Orbiter)"]
 )
