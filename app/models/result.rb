@@ -12,7 +12,6 @@ class Result < ApplicationRecord
 
 	def self.pick_attributes(preferences, products)
 		ride = randomly_choose_product(products)
-		p preferences
 		ride = randomly_choose_launch(preferences, ride) if ride["can_launch"]
 		ride["misc_restriction"] = add_misc_restriction(preferences) if preferences["misc_restriction"] == "on"
 		ride = get_height_range(preferences, ride)
@@ -64,17 +63,11 @@ class Result < ApplicationRecord
 	end
 
 	def self.filter_by_launch(preferences, products)
-		p "LAUNCH"
-		p "LAUNCH"
-		p "LAUNCH"
-		p "LAUNCH"
-		p preferences["launch"]
 		case preferences["launch"]
 		when "yes"
 			products = products.select { |product| product["can_launch"] }
-			p products
 		when "maybe"
-			products = products.select { product["can_launch"] }
+			products = products.select { |product| product["can_launch"] }
 		when "no"
 			products = products.reject { |product| product["can_launch"] || product["must_launch"]}
 		end
