@@ -153,7 +153,22 @@ class Result < ApplicationRecord
 	end
 
 	def self.add_misc_restriction(preferences)
-		["cross-over a river multiple times, but you can't put supports in the water", "be built over the side of a lake, but you can't put supports in the water", "on a cliff/in a quarry (see Iron Rattler)", "have the station be the highest point of the ride", "be less than 50ft above ground level", "be built up the side of a hill", "have terrain that forces the first drop to not be the largest drop", "the whole thing is in a giant hole like everything at Alton Towers", "intertwine two ride structures (see Vilda Musen / Jetline at Grona Lund)", "dueling/racing version", "lifthill or launch is the middle of the ride", "build what you were told to build, but instead it's a Chinese-knockoff"].sample
+		["cross-over a river multiple times, but you can't put supports in the water",
+			"be built over the side of a lake, but you can't put supports in the water", 
+			"on a cliff/in a quarry (see Iron Rattler)", 
+			"have the station be the highest point of the ride", 
+			"be less than 50ft above ground level", 
+			"be built up the side of a hill", 
+			"have terrain that forces the first drop to not be the largest drop", 
+			"the whole thing is in a giant hole like everything at Alton Towers",
+			"one ride is built into and partially uses an existing ride's structure (see Vilda Musen / Jetline at Grona Lund)", 
+			"dueling/racing version", 
+			"lifthill or launch is the middle of the ride",
+			"intertwine two coasters (see the Vekomas at Fantasy Island)",
+			"built partially over in-game flat rides",
+			"if applicable, build a standard model for the style, but tack on a custom element (see the SLC's with the extra helix, Blue Tornado at Gardaland)",
+			"if applicable, one of your elements must be the world's tallest for that ride type. For example world's largest corkscrew on a B&M flyer",
+			"build what you were told to build, but instead it's a Chinese-knockoff", ].sample
 	end
 
 end
