@@ -11,6 +11,17 @@ gerstlauer = Manufacturer.find_or_create_by!(manufacturer_name: "Gerstlauer")
 maurer = Manufacturer.find_or_create_by!(manufacturer_name: "Maurer Sohne")
 premier = Manufacturer.find_or_create_by!(manufacturer_name: "Premier")
 mack = Manufacturer.find_or_create_by!(manufacturer_name: "Mack")
+rmc = Manufacturer.find_or_create_by!(manufacturer_name: "RMC")
+
+rmc = Product.find_or_create_by!(
+	manufacturer_id: rmc.id,
+	product_name: "Rocky Mountain coaster",
+	tall: 205,
+	short: 100,
+	launch_options: ["flat launch", "inclined launch"],
+	typical_elements: ["overbanked turn", "zero G roll"],
+	plausible_elements: ["dive loop (see Goliath SFGAm)", "helix", "trenches", "tunnels", "immelman (reverse of SFGAm's dive loop on Golaith)", "stengal dive", "zero G stall", "double-up", "double-down", "dipping drop (see Outlaw Run)", "corkscrew", "vertical loop", "barrel roll drop", "sideways air hill", "cutback", "outer-banked turn (see Steel Vengence)", "s-hill", "turnaround on Twisted Cyclone", "inverse-banked turn (see Outlaw Run's first element)", "barrel roll", "stengal dive", "off-axis air hill", "trick-track double up", "trick track double down", "Wildfire-style drop (Kolmarden)"]
+)
 
 standupbm = Product.find_or_create_by!(
 	manufacturer_id: b_and_m.id,
@@ -119,7 +130,7 @@ gci_coaster = Product.find_or_create_by!(
 	difficult: false,
 	can_launch: false,
 	typical_elements: ["out and back layout (see White Lightning/Mystic Timbers)", "sprawling layout (see Roar)", "low to the ground (see Prowler)"],
-	plausible_elements: ["small floater hills (see American Thunder)", "station fly through (see Thunderhead)", "straight drop (see Invadr)", "S-drop (see Renegade/Wicker Man's second hill)", "trenches", "double-up/double-down combo (see White Lightning)", "80 degree turn (see Thunderhead)", "outer-banked hill (see Joris en de Draak)", "double-up", "double-down", "steel structure", "above-ground tunnels", "S-hill",  "prelift section", "second largest hill isn't right after the first drop"]
+	plausible_elements: ["small floater hills (see American Thunder)", "station fly through (see Thunderhead)", "straight drop (see Invadr)", "S-drop (see Renegade/Wicker Man's second hill)", "trenches", "double-up/double-down combo (see White Lightning)", "80 degree turn (see Thunderhead)", "outer-banked hill (see Joris en de Draak)", "double-up", "double-down", "steel structure", "above-ground tunnels", "S-hill", "second largest hill isn't right after the first drop"]
 )
 
 cci_coaster = Product.find_or_create_by!(
@@ -132,7 +143,7 @@ cci_coaster = Product.find_or_create_by!(
 	difficult: false,
 	can_launch: false,
 	typical_elements: ["cyclone layout (see Great White)", "straight drop", "sprawling layout (see Rampage)", "linear out and back layout (see Shivering Timbers)", "2-seat PTCs"],
-	plausible_elements: ["trenches", "double-up", "double-down", "heavy lateral G helix (see Boss)", "twisting drop (see Medusa - SFM)", "trick-track - see Shivering Timbers (before it was taken out)", "steel structure", "above-ground tunnels", "minimal banking (see Legend)", "section obviously reprofiled by GCI (see Boulder Dash)", "S-hill", "prelift section", "second largest hill isn't right after the first drop", "double-up/double-down combo (see White Lightning)"]
+	plausible_elements: ["trenches", "double-up", "double-down", "heavy lateral G helix (see Boss)", "twisting drop (see Medusa - SFM)", "trick-track - see Shivering Timbers (before it was taken out)", "steel structure", "above-ground tunnels", "minimal banking (see Legend)", "section obviously reprofiled by GCI (see Boulder Dash)", "S-hill", "second largest hill isn't right after the first drop", "double-up/double-down combo (see White Lightning)"]
 )
 
 gg = Product.find_or_create_by!(
@@ -144,7 +155,7 @@ gg = Product.find_or_create_by!(
 	difficult: false,
 	can_launch: false, 
 	typical_elements: ["twister layout (see Twister - Grona Lund)", "straight drop", "sprawling layout (see Ravine Flyer II)", "out and back layout (see Voyage)", "cyclone-ish layout (see Mine Blower)"],
-	plausible_elements: ["trenches", "double-up", "double-down", "steel structure", "overbanked-curve (see Cú Chulainn)", "corkscrew (see Hades 360)", "zero-G-roll (See Mine Blower)", "outer-banked curve (see Voyage)", "90 degree turn (see Ravine Flyer II)", "S-hill", "90 degree hill (see Jungle Trailblazer - Fantawild Asian Legends)", "prelift section", "twisting drop", "prelift section", "second largest hill isn't right after the first drop", "double-up/double-down combo (see White Lightning)"]
+	plausible_elements: ["trenches", "double-up", "double-down", "steel structure", "overbanked-curve (see Cú Chulainn)", "corkscrew (see Hades 360)", "zero-G-roll (See Mine Blower)", "outer-banked curve (see Voyage)", "90 degree turn (see Ravine Flyer II)", "S-hill", "90 degree hill (see Jungle Trailblazer - Fantawild Asian Legends)", "twisting drop", "second largest hill isn't right after the first drop", "double-up/double-down combo (see White Lightning)"]
 )
 
 intawood = Product.find_or_create_by!(
@@ -157,7 +168,7 @@ intawood = Product.find_or_create_by!(
 	can_invert: false,
 	can_launch: false,
 	typical_elements: ["cyclone layout (see Balder)", "out and back layout (see Colossos)", "twister finale (see El Toro)"],
-	plausible_elements: ["trenches", "double-up", "double-down", "S-hill", "prelift section", "second largest hill isn't right after the first drop", "double-up/double-down combo", "helix"]
+	plausible_elements: ["trenches", "double-up", "double-down", "S-hill", "second largest hill isn't right after the first drop", "double-up/double-down combo", "helix"]
 )
 
 freeform_woodie = Product.find_or_create_by!(
@@ -169,7 +180,7 @@ freeform_woodie = Product.find_or_create_by!(
 	difficult: false,
 	can_launch: false,
 	typical_elements: ["cyclone layout (see Cyclone ( ͡° ͜ʖ ͡°) )", "linear out and back layout", "twister layout"],
-	plausible_elements: ["trenches", "double-up", "double-down", "steel structure", "S-hill", "corkscrew", "zero-g-roll", "tunnel", "Mr. Twister drop", "big helix (see Beast)", "vertical loop (see Son of Beast)", "prelift section", "second largest hill isn't right after the first drop", "2-seat PTCS", "3-seat PTCS", "Morgan trains", "Timberliners", "overbanked-curve (see Cú Chulainn)", "helix", "double-up/double-down combo"]
+	plausible_elements: ["trenches", "double-up", "double-down", "steel structure", "S-hill", "corkscrew", "zero-g-roll", "tunnel", "Mr. Twister drop", "big helix (see Beast)", "vertical loop (see Son of Beast)", "second largest hill isn't right after the first drop", "2-seat PTCS", "3-seat PTCS", "Morgan trains", "Timberliners", "overbanked-curve (see Cú Chulainn)", "helix", "double-up/double-down combo"]
 )
 
 freeform_classic_woodie = Product.find_or_create_by!(
@@ -182,7 +193,7 @@ freeform_classic_woodie = Product.find_or_create_by!(
 	old: true,
 	can_launch: false,
 	typical_elements: ["cyclone layout (see Cyclone ( ͡° ͜ʖ ͡°) )", "linear out and back layout", "twister layout"],
-	plausible_elements: ["trenches", "double-up", "double-down", "S-hill",  "brutality (see Crystal Beach Cyclone)", "tunnel", "old-timey skid brakes (if applicable)", "drop into a big flat turn (see Hurler, Hercules - Dorney Park)", "enormous Dinn/Summers thing (see Mean Streak, Texas Giant, Jupiter)", "Mr. Twister drop", "big helix (see Beast)", "prelift section", "it's white!", "second largest hill isn't right after the first drop", "weird kinked drops (see SFNE Cyclone, ripep)", "2-seat PTCS", "3-seat PTCS", "Morgan trains", "double-up/double-down"]
+	plausible_elements: ["trenches", "double-up", "double-down", "S-hill",  "brutality (see Crystal Beach Cyclone)", "tunnel", "old-timey skid brakes (if applicable)", "drop into a big flat turn (see Hurler, Hercules - Dorney Park)", "enormous Dinn/Summers thing (see Mean Streak, Texas Giant, Jupiter)", "Mr. Twister drop", "big helix (see Beast)", "it's white!", "second largest hill isn't right after the first drop", "weird kinked drops (see SFNE Cyclone, ripep)", "2-seat PTCS", "3-seat PTCS", "Morgan trains", "double-up/double-down"]
 )
 
 schwarzkopf = Product.find_or_create_by!(
@@ -194,7 +205,7 @@ schwarzkopf = Product.find_or_create_by!(
 	old: true,
 	can_launch: false,
 	typical_elements: ["double-loop", "helix", "portable", "sprawling layout", "loops-arranged geometrically"],
-	plausible_elements: ["no inversions (see Jetline)", "'differently shaped' double-loops (see Zonga)", "tunnels", "trenches", "half-loop half-corkscrews (see Zonga)", "thread the loop", "figure-8-loop (but survivable)", "aesthetically arrange the loop(s)", "loops aren't in succession (see Mindbender - SFOG)", "air hill (see Alpinabahn)", "inclined(ish) loop (see Mindbender SFOG)", "ruthless German efficiency (make it run 4+ trains smoothly)", "older style (Revolution/SooperDooperLooper truss loop)", "figure-8-loop (google it, good luck)"]
+	plausible_elements: ["no inversions (see Jetline)", "'differently shaped' double-loops (see Zonga)", "tunnels", "trenches", "half-loop half-corkscrews (see Zonga)", "thread the loop", "figure-8-loop (but survivable)", "aesthetically arrange the loop(s)", "loops aren't in succession (see Mindbender - SFOG)", "air hill (see Alpinabahn)", "inclined(ish) loop (see Mindbender SFOG)", "ruthless German efficiency (make it run 4+ trains smoothly)", "older style (Revolution/SooperDooperLooper truss loop)"]
 )
 
 schwarzkopf = Manufacturer.find_or_create_by!(manufacturer_name: "Schwarzkopf")
@@ -456,7 +467,7 @@ skyloop_maurer_x_car = Product.find_or_create_by!(
 
 maurer_spinner = Product.find_or_create_by!(
 	manufacturer_id: maurer.id,
-	product_name: "Maurer Spinning Coaster",
+	product_name: "Maurer spinning coaster",
 	tall: 84,
 	short: 40,
 	difficult: false,
@@ -467,7 +478,7 @@ maurer_spinner = Product.find_or_create_by!(
 
 premier_shuttle = Product.find_or_create_by!(
 	manufacturer_id: premier.id,
-	product_name: "Premier Shuttle Coaster",
+	product_name: "Premier shuttle coaster",
 	tall: 224,
 	short: 164,
 	difficult: false,
@@ -479,7 +490,7 @@ premier_shuttle = Product.find_or_create_by!(
 
 premier_launcher = Product.find_or_create_by!(
 	manufacturer_id: premier.id,
-	product_name: "Premier Launch Coaster",
+	product_name: "Premier launch coaster",
 	tall: 160,
 	short: 150,
 	difficult: false,

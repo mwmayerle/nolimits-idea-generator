@@ -24,6 +24,10 @@
  		<% end %>
  		</ul>
  	<% end %>
+ 	<% if @results["rmc"] %>
+ 		<p>Think about converting the following woodie: <%= @results["rmc"].gsub("_", " ") %></p>
+ 		<p>Or make something totally custom ;-)</p>
+ 	<% end %>
  	<% if @results["misc_restriction"] %>
  		<p>Miscellaneous Restriction: <%= @results["misc_restriction"] %></p>
  	<% end %>

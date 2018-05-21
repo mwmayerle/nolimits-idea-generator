@@ -12,6 +12,7 @@ class Result < ApplicationRecord
 
 	def self.pick_attributes(preferences, products)
 		ride = randomly_choose_product(products)
+		ride["rmc"] = choose_woodie_to_rmc_convert if ride["product_name"] == "Rocky Mountain coaster"
 		ride = randomly_choose_launch(preferences, ride) if ride["can_launch"]
 		ride["misc_restriction"] = add_misc_restriction(preferences) if preferences["misc_restriction"] == "on"
 		ride = get_height_range(preferences, ride)
@@ -152,6 +153,10 @@ class Result < ApplicationRecord
 		elements
 	end
 
+	def self.choose_woodie_to_rmc_convert
+		%w(Boss American_Eagle Screamin'_Eagle Beast Coaster_Express Magnus_Colossus Montezum Timber_Wolf Great_America_Scream_Machine Cyclone Mighty_Canadian_Minebuster Wild_Beast Racer Grizzly Hurler Wild_One Wildcat Timber_Terror Monstre Twister_II Tornado Wolverine_Wildcat Shivering_Timbers Predator Hoosier_Hurricane Zeus Yankee_Cannonball Tornado Great_White Arkansas_Twister Excalibur Rampage Roar LIghtning_Racer Twister Tremors Boulder_Dash Legend Voyage Cornball Express Tonnerre_De_Zeus Megaphobia Stampida Robin_Hood Anaconda Loup-Garou Thundercoaster Cheetah Jupiter Regina Elf Zipper_Dipper New_Mexico_Rattler Timberhawk Falken Hell_Cat ).sample
+	end
+
 	def self.add_misc_restriction(preferences)
 		["cross-over a river multiple times, but you can't put supports in the water",
 			"be built over the side of a lake, but you can't put supports in the water", 
@@ -168,6 +173,7 @@ class Result < ApplicationRecord
 			"built partially over in-game flat rides",
 			"if applicable, build a standard model for the style, but tack on a custom element (see the SLC's with the extra helix, Blue Tornado at Gardaland)",
 			"if applicable, one of your elements must be the world's tallest for that ride type. For example world's largest corkscrew on a B&M flyer",
+			"include a pre-lift section",
 			"build what you were told to build, but instead it's a Chinese-knockoff", ].sample
 	end
 
