@@ -154,7 +154,7 @@ class Result < ApplicationRecord
 	end
 
 	def self.choose_woodie_to_rmc_convert
-		%w(Boss American_Eagle Screamin'_Eagle Beast Coaster_Express Magnus_Colossus Montezum Timber_Wolf Great_American_Scream_Machine Cyclone Mighty_Canadian_Minebuster Wild_Beast Racer Grizzly Hurler Wild_One Wildcat Timber_Terror Monstre Twister_II Tornado Wolverine_Wildcat Shivering_Timbers Predator Hoosier_Hurricane Zeus Yankee_Cannonball Tornado Great_White Arkansas_Twister Excalibur Rampage Roar LIghtning_Racer Twister Tremors Boulder_Dash Legend Voyage Cornball Express Tonnerre_De_Zeus Megaphobia Stampida Robin_Hood Anaconda Loup-Garou Thundercoaster Cheetah Jupiter Regina Elf Zipper_Dipper New_Mexico_Rattler Timberhawk Falken Hell_Cat ).sample
+		%w(Boss American_Eagle Screamin'_Eagle Beast Coaster_Express Magnus_Colossus Montezum Timber_Wolf Great_American_Scream_Machine Cyclone Mighty_Canadian_Minebuster Wild_Beast Racer Grizzly Hurler Wild_One Wildcat Timber_Terror Monstre Twister_II Tornado Wolverine_Wildcat Shivering_Timbers Predator Hoosier_Hurricane Zeus Yankee_Cannonball Tornado Great_White Arkansas_Twister Excalibur Rampage Roar LIghtning_Racer Twister Tremors Boulder_Dash Legend Voyage Cornball_Express Tonnerre_De_Zeus Megaphobia Stampida Robin_Hood Anaconda Loup-Garou Thundercoaster Cheetah Jupiter Regina Elf Zipper_Dipper New_Mexico_Rattler Timberhawk Falken Hell_Cat ).sample
 	end
 
 	def self.add_misc_restriction(preferences)
