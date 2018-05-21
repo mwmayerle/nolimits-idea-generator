@@ -20,7 +20,7 @@ rmc = Product.find_or_create_by!(
 	short: 100,
 	launch_options: ["flat launch", "inclined launch"],
 	typical_elements: ["overbanked turn", "zero G roll"],
-	plausible_elements: ["dive loop (see Goliath SFGAm)", "helix", "trenches", "tunnels", "immelman (reverse of SFGAm's dive loop on Golaith)", "stengal dive", "zero G stall", "double-up", "double-down", "dipping drop (see Outlaw Run)", "corkscrew", "vertical loop", "barrel roll drop", "sideways air hill", "cutback", "outer-banked turn (see Steel Vengence)", "s-hill", "turnaround on Twisted Cyclone", "inverse-banked turn (see Outlaw Run's first element)", "barrel roll", "stengal dive", "off-axis air hill", "trick-track double up", "trick track double down", "Wildfire-style drop (Kolmarden)"]
+	plausible_elements: ["dive loop (see Goliath SFGAm)", "helix", "trenches", "tunnels", "immelman (reverse of SFGAm's dive loop on Golaith)", "stengal dive", "zero G stall", "double-up", "double-down", "dipping drop (see Outlaw Run)", "corkscrew", "vertical loop", "barrel roll drop", "sideways air hill", "cutback", "outer-banked turn (see Steel Vengence)", "s-hill", "turnaround on Twisted Cyclone", "inverse-banked turn (see Outlaw Run's first element)", "barrel roll", "stengal dive", "off-axis air hill", "trick-track double up", "trick track double down", "Wildfire-style drop (Kolmarden)", "flying snake dive", "reverse flying snake dive"]
 )
 
 standupbm = Product.find_or_create_by!(
