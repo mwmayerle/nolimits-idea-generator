@@ -193,7 +193,7 @@ freeform_classic_woodie = Product.find_or_create_by!(
 	old: true,
 	can_launch: false,
 	typical_elements: ["cyclone layout (see Cyclone ( ͡° ͜ʖ ͡°) )", "linear out and back layout", "twister layout"],
-	plausible_elements: ["trenches", "double-up", "double-down", "S-hill",  "brutality (see Crystal Beach Cyclone)", "tunnel", "old-timey skid brakes (if applicable)", "drop into a big flat turn (see Hurler, Hercules - Dorney Park)", "enormous Dinn/Summers thing (see Mean Streak, Texas Giant, Jupiter)", "Mr. Twister drop", "big helix (see Beast)", "it's white!", "second largest hill isn't right after the first drop", "weird kinked drops (see SFNE Cyclone, ripep)", "2-seat PTCS", "3-seat PTCS", "Morgan trains", "double-up/double-down"]
+	plausible_elements: ["trenches", "double-up", "double-down", "S-hill",  "brutality (see Crystal Beach Cyclone)", "tunnel", "old-timey skid brakes (if applicable)", "drop into a big flat turn (see Hurler, Hercules - Dorney Park)", "enormous Dinn/Summers thing (see Mean Streak, Texas Giant, Jupiter)", "Mr. Twister drop", "big helix (see Beast)", "it's white!", "second largest hill isn't right after the first drop", "weird kinked drops (see SFNE Cyclone, ripep)", "2-seat PTCS", "3-seat PTCS", "Morgan trains", "double-up/double-down combo", "new age plug-n-play"]
 )
 
 schwarzkopf = Product.find_or_create_by!(
@@ -231,7 +231,7 @@ arrow_looper = Product.find_or_create_by!(
 	difficult: false,
 	old: true,
 	can_launch: false,
-	typical_elements: ["double loop", "double corkscrew", "sprawling layout", "batwing"],
+	typical_elements: ["double loop", "double corkscrew", "batwing"],
 	plausible_elements: ["elevated single loop (see Viper - SFMM)", "triple corkscrew (see Fantasia Special	- Tongdo Fantasia)", "bowtie (see Dragon Mountain)", "interlocking loops (see Loch Ness Monster)", "airtime hills", "corkscrews aren't last (see Vortex - Kings Island", "cobra roll (see Drachen Fire)", "wraparound corkscrew (see Drachen Fire)", "cutback (see Drachen Fire)", "corkscrews aren't one after the other", "trench", "tunnel", "terrible helices (see Anaconda - Kings Dominion)", "sidewinder/immelman (see Ninja SF St. Louis)", "reverse sidewinder/dive loop", "turning drop", "straight drop", "helix", "only one corkscrew"]
 )
 
@@ -242,7 +242,7 @@ vekoma_looper = Product.find_or_create_by!(
 	short: 65,
 	difficult: false,
 	launch_options: ["flat launch (see Xpress)", "inclined launch (see Space Mountain: Mission 2)"],
-	typical_elements: ["double loop", "double corkscrew", "sprawling layout", "batwing"],
+	typical_elements: ["double loop", "double corkscrew", "batwing"],
 	plausible_elements: ["triple corkscrew (see Fantasia Special - Tongdo Fantasia)", "bowtie (see Dragon Mountain)","corkscrews aren't last (see Vortex - Kings Island", "cobra roll (see Drachen Fire)", "corkscrews aren't one after the other", "trench", "tunnel", "butterfly (see Blue Hawk)", "sidewinder/immelman (see Ninja SF St. Louis)", "reverse sidewinder/dive loop", "more modern design (see Millennium Coaster)", "helix drop (see Horror Express)", "sea serpent (see Xpress)", "tilt drop (see Gravity Max)", "spaghetti-bowl style (see Xpress)", "helix", "stengal dive", "straight drop", "turning drop"]
 )
 
@@ -266,7 +266,7 @@ vekoma_slc =  Product.find_or_create_by!(
 	short: 109,
 	difficult: false,
 	can_launch: false,
-	typical_elements: ["horseshoe", "roll over (sea serpent on the SLC model)", "immelman"],
+	typical_elements: ["roll over (sea serpent on the SLC model)", "immelman"],
 	plausible_elements: ["cobra roll", "helix", "vertical loop", "zero G roll", "dive loop", "tight corkscrews (on the SLCs)", "corkscrew", "batwing", "trenches", "tunnel", "stengal dive", "overbanked turn"]
 )
 
@@ -293,8 +293,8 @@ vekoma_motorbike =  Product.find_or_create_by!(
 	difficult: false,
 	must_launch: true,
 	typical_elements: ["launch into a hill", "figure-8"],
-	launch_options: ["flat launch", "inclined launch"],
-	plausible_elements: ["overbanked turn", "zero-g-roll", "multiple launches", "trenches", "tunnels", "s-hill", "air hill", "helix", "inclined loop", "Use a chainlift instead"]
+	launch_options: ["flat launch", "inclined launch", "multiple launches (Manta/Cheetah Hunt style)"],
+	plausible_elements: ["overbanked turn", "zero-g-roll", "trenches", "tunnels", "s-hill", "air hill", "helix", "inclined loop", "Use a chainlift instead"]
 )
 
 arrow = Manufacturer.find_or_create_by!(manufacturer_name: "Arrow Dynamics")
@@ -393,7 +393,7 @@ intamin_mega = Product.find_or_create_by!(
 	difficult: true,
 	can_launch: false,
 	typical_elements: ["straight drop"],
-	plausible_elements: ["overbanked turn", "trenches", "tunnels", "s-hills", "helix", "very small air hill (see Thunder Dolphin)", "twisted first drop (see Expedition GeForce)", "stengal dive (see Goliath at Walibi)", "double-up", "double-down", "high in the air turnaround before the drop (see Coaster Through the Clouds)", "tight low turns (see Hyperion)", "rapid transitions (see Intimidator 305)", "drop into an intense turn (see Intimidator 305)", "almost but not really a dive loop turnaround", "non-inverting loop (see Soaring with Dragon)", "drop into a turn (see SROS SFA)"]
+	plausible_elements: ["overbanked turn", "trenches", "tunnels", "s-hills", "helix", "very small air hill (see Thunder Dolphin)", "twisted first drop (see Expedition GeForce)", "stengal dive (see Goliath at Walibi)", "double-up", "double-down", "high in the air turnaround before the drop (see Coaster Through the Clouds)", "tight low turns (see Hyperion)", "rapid transitions (see Intimidator 305)", "drop into an intense turn (see Intimidator 305)", "almost but not really a dive loop turnaround (see Polish hyper)", "non-inverting loop (see Soaring with Dragon)", "drop into a turn (see SROS SFA)"]
 )
 
 gerstlauer = Manufacturer.find_or_create_by!(manufacturer_name: "Gerstlauer")
@@ -406,7 +406,7 @@ gerst_infinity = Product.find_or_create_by!(
 	difficult: true,
 	launch_options: ["triple-launch w/spike (see Goldrush)", "small dip into a flat launch (see Junker)", "inclined launch"],
 	typical_elements: ["vertical lift", "beyond-vertical drop", "twisting vertical drop (see Mystery Mine)", "cobra roll", "dive loop into a tunnel"],
-	plausible_elements: ["overbanked turn", "tophat", "launch", "fat loop", "vertical loop", "immelman", "sea serpent", "staffordshire knot (see Smiler)", "norwegian loop", "Gerstlauer-style dive loop (see Smiler, the entrance is straight)", "corkscrew", "barrel rolls", "the abomination/twisty half-loop thing on the Mystery Mine finale", "banana roll", "cutback", "air hill", "s-hill", "trenches", "tunnels", "prelift barrel roll", "launch and a lift (see Takabisha)", "not quite a loop and not quite a corkscrew (see Hangtime)", "inversion drop (see Smiler)", "holding brake (see Hangtime)", "stengal dive", "inclined loop (see Iron Shark)", "screw everything on the list, force no inversions like Karnan", "turn a random inversion into a non-inversion by force (see the sea serpent thing on Karnan)", "stengal dive", "helix"]
+	plausible_elements: ["overbanked turn", "tophat", "fat loop", "vertical loop", "immelman", "sea serpent", "staffordshire knot (see Smiler)", "norwegian loop", "Gerstlauer-style dive loop (see Smiler, the entrance is straight)", "corkscrew", "barrel rolls", "the abomination/twisty half-loop thing on the Mystery Mine finale", "banana roll", "cutback", "air hill", "s-hill", "trenches", "tunnels", "prelift barrel roll", "launch and a lift (see Takabisha)", "not quite a loop and not quite a corkscrew (see Hangtime)", "inversion drop (see Smiler)", "holding brake (see Hangtime)", "stengal dive", "inclined loop (see Iron Shark)", "screw everything on the list, force no inversions like Karnan", "turn a random inversion into a non-inversion by force (see the sea serpent thing on Karnan)", "stengal dive", "helix"]
 )
 
 gerst_euro = Product.find_or_create_by!(
@@ -428,7 +428,7 @@ gerst_bobsled = Product.find_or_create_by!(
 	difficult: false,
 	can_launch: false, 
 	typical_elements: ["wild mouse turns", "intense helix", "multiple air hills", "s-hill", "trenches"],
-	plausible_elements: ["tunnels", "overbanked turn", "double-up", "double-down", 'outer-banked curve', "stengal dive"]
+	plausible_elements: ["tunnels", "overbanked turn", "double-up", "double-down", 'outer-banked curve', "stengal dive", 'outer-banked curve']
 )
 
 gerst_spinner = Product.find_or_create_by!(
@@ -439,7 +439,7 @@ gerst_spinner = Product.find_or_create_by!(
 	difficult: false,
 	can_launch: false,
 	typical_elements: ["wild mouse turns", "helices", "s-hill", "trenches"],
-	plausible_elements: ["tunnels", "overbanked turn", "double-up", "double-down", "corkscrew (see Veil of Dark - The Shooting Coaster)", "JUST KIDDING NOW MAKE IT A ZAMPERLA SPINNER AHAHAHAHAHA!!!!!", "inclined loop", "vertical turn", "stengal dive", "short boosts with tires (see Galaxy Orbiter)"]
+	plausible_elements: ["tunnels", "overbanked turn", "double-up", "double-down", "corkscrew (see Veil of Dark - The Shooting Coaster)", "JUST KIDDING NOW MAKE IT A ZAMPERLA SPINNER AHAHAHAHAHA!!!!!", "inclined loop", "vertical turn", "stengal dive", "short boosts with tires (see Galaxy Orbiter)", 'outer-banked curve']
 )
 
 launched_maurer_x_car = Product.find_or_create_by!(
@@ -473,7 +473,7 @@ maurer_spinner = Product.find_or_create_by!(
 	difficult: false,
 	can_launch: false,
 	typical_elements: ["vertical turn (see Dragons Fury)", "wild mouse turns"],
-	plausible_elements: ["tunnels", "overbanked turn", "double-up", "double-down", 'outer-banked curve', "s-hill", "trenches", "stengal dive", "JUST KIDDING NOW MAKE IT A ZAMPERLA SPINNER AHAHAHAHAHA!!!!!", "inclined loop", "portable", "tilt-track (see Winjas)", "treble clef (see Hollywood Rip Ride Rockit"]
+	plausible_elements: ["tunnels", "overbanked turn", "double-up", "double-down", 'outer-banked curve', "s-hill", "trenches", "stengal dive", "JUST KIDDING NOW MAKE IT A ZAMPERLA SPINNER AHAHAHAHAHA!!!!!", "inclined loop", "portable", "tilt-track (see Winjas)", "treble clef (see Hollywood Rip Ride Rockit", 'outer-banked curve']
 )
 
 premier_shuttle = Product.find_or_create_by!(

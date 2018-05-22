@@ -154,7 +154,7 @@ class Result < ApplicationRecord
 	end
 
 	def self.choose_woodie_to_rmc_convert
-		%w(Boss American_Eagle Screamin'_Eagle Beast Coaster_Express Magnus_Colossus Montezum Timber_Wolf Great_American_Scream_Machine Cyclone Mighty_Canadian_Minebuster Wild_Beast Racer Grizzly Hurler Wild_One Wildcat Timber_Terror Monstre Twister_II Tornado Wolverine_Wildcat Shivering_Timbers Predator Hoosier_Hurricane Zeus Yankee_Cannonball Tornado Great_White Arkansas_Twister Excalibur Rampage Roar LIghtning_Racer Twister Tremors Boulder_Dash Legend Voyage Cornball_Express Tonnerre_De_Zeus Megaphobia Stampida Robin_Hood Anaconda Loup-Garou Thundercoaster Cheetah Jupiter Regina Elf Zipper_Dipper New_Mexico_Rattler Timberhawk Falken Hell_Cat ).sample
+		%w(Boss American_Eagle Screamin'_Eagle Beast Coaster_Express Magnus_Colossus Montezum Timber_Terror Timber_Wolf Great_American_Scream_Machine Cyclone Mighty_Canadian_Minebuster Wild_Beast Racer Grizzly Hurler Wild_One Wildcat Timber_Terror Monstre Twister_II Tornado Wolverine_Wildcat Shivering_Timbers Predator Hoosier_Hurricane Zeus Yankee_Cannonball Tornado Great_White Arkansas_Twister Excalibur Rampage Roar Lightning_Racer Twister Tremors Tornado Boulder_Dash Legend Voyage Cornball_Express Tonnerre_De_Zeus Megaphobia Stampida Robin_Hood Anaconda Loup-Garou Thundercoaster Cheetah Jupiter Regina Elf Zipper_Dipper New_Mexico_Rattler Timberhawk Falken Hell_Cat Raven Viper American_Thunder Thunderbolt Wodan Wicker_Man Son_of_Beast Kentucky_Rumbler Cyclops Mr._Twister_II Thunderhead Apocalypse Big_Dipper Blue_Streak Boardwalk_Bullet Coaster Grand_National High_Roller Jack_Rabbit Kingdom_Coaster Outlaw Mammut Phoenix Prowler Ravine_Flyer_II Renegade Swamp_Fox Troy Zach's_Zoomer).sample
 	end
 
 	def self.add_misc_restriction(preferences)
@@ -173,7 +173,7 @@ class Result < ApplicationRecord
 			"built partially over in-game flat rides",
 			"if applicable, build a standard model for the style, but tack on a custom element (see the SLC's with the extra helix, Blue Tornado at Gardaland)",
 			"if applicable, one of your elements must be the world's tallest for that ride type. For example world's largest corkscrew on a B&M flyer",
-			"include a pre-lift section",
+			"include a lengthy pre-lift section",
 			"build what you were told to build, but instead it's a Chinese-knockoff", ].sample
 	end
 
