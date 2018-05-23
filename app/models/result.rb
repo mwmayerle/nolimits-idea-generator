@@ -171,8 +171,9 @@ class Result < ApplicationRecord
 			"lifthill or launch is the middle of the ride",
 			"intertwine two coasters (see the Vekomas at Fantasy Island)",
 			"built partially over in-game flat rides",
-			"if applicable, build a standard model for the style, but tack on a custom element (see the SLC's with the extra helix, Blue Tornado at Gardaland)",
+			"if applicable, build a standard model for the style, but tack on a custom element (see the SLC's with the extra helix, like Blue Tornado at Gardaland)",
 			"if applicable, one of your elements must be the world's tallest for that ride type. For example world's largest corkscrew on a B&M flyer",
+			"ride must interact with a path",
 			"include a lengthy pre-lift section",
 			"build what you were told to build, but instead it's a Chinese-knockoff"].sample
 	end
