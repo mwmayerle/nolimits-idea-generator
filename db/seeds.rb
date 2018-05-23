@@ -320,7 +320,7 @@ fourth_dimension = Product.find_or_create_by!(
 	difficult: true,
 	typical_elements: ["vertical drop", "linear layout"],
 	launch_options: ["flat launch (see Xpress)", "inclined launch (see Space Mountain: Mission 2)"],
-	plausible_elements: ["inside raven turn", "outside raven turn", "raven turn with the straight section", "fly to lie", "lie to fly", "vertical loop", "pretzel loop (like B&M flyers)", "zero G roll", "trenches", "tunnels", "backflip", "front-flip", "air hill", "overbanked turn", "non-linear layout (make it a T or L shape or something"]
+	plausible_elements: ["inside raven turn", "outside raven turn", "raven turn with the straight section", "fly to lie", "lie to fly", "vertical loop", "pretzel loop (like B&M flyers)", "zero G roll", "trenches", "tunnels", "backflip", "front-flip", "air hill", "overbanked turn", "non-linear layout (make it a T or L shape or something", "saxophone (see S&S Screaming Squirrels)"]
 )
 
 intamin = Manufacturer.find_or_create_by!(manufacturer_name: "Intamin")
@@ -400,7 +400,7 @@ gerstlauer = Manufacturer.find_or_create_by!(manufacturer_name: "Gerstlauer")
 
 gerst_infinity = Product.find_or_create_by!(
 	manufacturer_id: gerstlauer.id,
-	product_name: "Infinity Coaster (longer train like Karnan or Smiler)",
+	product_name: "Gerstlauer Infinity coaster (longer train like Karnan or Smiler)",
 	tall: 240,
 	short: 80,
 	difficult: true,
@@ -451,7 +451,7 @@ launched_maurer_x_car = Product.find_or_create_by!(
 	must_launch: true,
 	launch_options: ["flat launch"],
 	typical_elements: ["tophat", "corkscrew", "vertical loop"],
-	plausible_elements: ["dive loop", "overbanked turn", "double-up", "double-down", 'outer-banked curve', "immelman", "barrel roll", "tunnels", "trenches", "s-hill", "helix", "stengal dive", "bent-Cuban-8 (see G Force at Drayton Manor", "non-inverting loop (see Hollywood Rip Rockit)", "treble clef (see Hollywood Rip Ride Rockit"]
+	plausible_elements: ["dive loop", "overbanked turn", "double-up", "double-down", 'outer-banked curve', "immelman", "barrel roll", "tunnels", "trenches", "s-hill", "helix", "stengal dive", "bent-Cuban-8 (see G Force at Drayton Manor", "non-inverting loop (see Hollywood Rip Rockit)", "treble clef (see Hollywood Rip Ride Rockit", "half corkscrew half barrel roll"]
 )
 
 skyloop_maurer_x_car = Product.find_or_create_by!(
@@ -462,7 +462,7 @@ skyloop_maurer_x_car = Product.find_or_create_by!(
 	difficult: false,
 	can_launch: false,
 	typical_elements: ["non-inverting loop (see Hollywood Rip Rockit", "vertical inversion lift (see any Skyloop)", "bent-Cuban-8 (see G Force at Drayton Manor)"],
-	plausible_elements: ["tunnels", "overbanked turn", "double-up", "double-down", 'outer-banked curve', "s-hill", "trenches", "stengal dive", "immelman", "make an 'extension' of a skyloop model (see Abismo)", "barrel roll", "s-hill", "helix", "corkscrew", "treble clef (see Hollywood Rip Ride Rockit"]
+	plausible_elements: ["tunnels", "overbanked turn", "double-up", "double-down", 'outer-banked curve', "s-hill", "trenches", "stengal dive", "immelman", "make an 'extension' of a skyloop model (see Abismo)", "barrel roll", "s-hill", "helix", "corkscrew", "treble clef (see Hollywood Rip Ride Rockit", "half corkscrew half barrel roll"]
 )
 
 maurer_spinner = Product.find_or_create_by!(
