@@ -509,7 +509,7 @@ mack_launcher = Product.find_or_create_by!(
 	must_launch: true,
 	launch_options: ['flat launch', 'inclined launch', 'triple-launch with spike (see Star Trek)', 'multiple launches (see Helix)'],
 	typical_elements: ["vertical loop", "really wide flat turn thing (see Blue Fire)"],
-	plausible_elements: ["cobra roll", "zero g roll", "dive loop", "immelman", "corkscrew", "barrel roll", "s-hill", "air hill", "stengal dive", "helix", "half-loop half-barrel roll", "kept very low to the ground (see Manta)", "norwegian loop", "non-inverting loop see DC Rivals"]
+	plausible_elements: ["cobra roll", "zero g roll", "dive loop", "immelman", "corkscrew", "barrel roll", "s-hill", "air hill", "stengal dive", "helix", "half-loop half-barrel roll", "kept very low to the ground (see Manta)", "norwegian loop", "non-inverting loop (see DC Rivals)"]
 )
 
 mack_mega_coaster = Product.find_or_create_by!(
