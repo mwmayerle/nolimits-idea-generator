@@ -1,5 +1,8 @@
-Manufacturer.all.delete
-Product.all.delete
+manu = Manufacturer.all
+prod = Product.all
+
+prod.each { |prod| prod.delete }
+manu.each { |prod| manu.delete }
 
 b_and_m = Manufacturer.find_or_create_by!(manufacturer_name: "Bolliger and Mabillard")
 gci = Manufacturer.find_or_create_by!(manufacturer_name: "Great Coasters International")
