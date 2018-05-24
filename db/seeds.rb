@@ -4,8 +4,8 @@ if Manufacturer.all.count > 0
 end
 
 if Product.all.count > 0
-	prod.each { |prod| prod.delete }
 	prod = Product.all
+	prod.each { |prod| prod.delete }
 end
 
 b_and_m = Manufacturer.find_or_create_by!(manufacturer_name: "Bolliger and Mabillard")
