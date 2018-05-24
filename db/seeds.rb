@@ -515,11 +515,11 @@ freeform_steel = Product.find_or_create_by!(
 	product_name: "freeform steel coaster",
 	difficult: false,
 	can_launch: true,
-	tall: 275,
-	short: 100,
-	launch_options: Product.where({material: "steel"}).map { |options| options.launch_options}.uniq.flatten,
-	typical_elements: Product.where({material: "steel"}).map { |options| options.typical_elements}.uniq.flatten,
-	plausible_elements: Product.where({material: "steel"}).map { |options| options.plausible_elements}.uniq.flatten,
+	tall: 300,
+	short: 133,
+	launch_options: Product.where({material: "steel"}).map { |options| options.launch_options.downcase}.uniq.flatten,
+	typical_elements: Product.where({material: "steel"}).map { |options| options.typical_elements.downcase}.uniq.flatten,
+	plausible_elements: Product.where({material: "steel"}).map { |options| options.plausible_elements.downcase}.uniq.flatten,
 )
 
 freeform_woodie = Product.find_or_create_by!(
