@@ -1,3 +1,6 @@
+Manufacturer.all.delete
+Product.all.delete
+
 b_and_m = Manufacturer.find_or_create_by!(manufacturer_name: "Bolliger and Mabillard")
 gci = Manufacturer.find_or_create_by!(manufacturer_name: "Great Coasters International")
 cci = Manufacturer.find_or_create_by!(manufacturer_name: "Custom Coasters International")
