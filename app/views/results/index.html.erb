@@ -11,8 +11,6 @@
 	<% end %>
 
 	<form class="form-control" action="/results", method="POST">
-		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-
 		<div class="form-group">
 			<h3>Pre-Ride Selection Preferences</h3>
 		</div>
@@ -162,7 +160,25 @@
 			<label class="form-check-label">Would you like a miscellaneous restriction (terrain, obstacles, etc) thrown at you?
 				<div class="form-check">
 					<input id="misc-restriction-checkBox" type="checkbox" name="misc_restriction">
-					<label for="misc-restriction-checkBox"> <-- Check me for a miscellaneous restriction</label>
+					<label for="misc-restriction-checkBox"> <strong>&larr;</strong> Check me for a miscellaneous restriction</label>
+		  	</div>
+			</label>
+		</div>
+
+		<div class="form-group">
+			<h3>Manufacturer Preferences</h3>
+		</div>
+
+		<div class="form-group">
+			<label class="form-check-label">Please check off all of the ride types you do want to build. Note that selected "Gravity Group" and "steel coasters only" above or other invalid combinations will throw an error and ask you to pick again:
+				<br>
+				<div class="form-check">
+					<ul class="list-unstyled">
+					<% @manufacturers.each do |manufacturer| %>
+						<li><input id="misc-restriction-checkBox" type="checkbox" name="manufacturers[<%= manufacturer.manufacturer_name %>]" checked>
+						<label for="misc-restriction-checkBox"><%= manufacturer.manufacturer_name %> </label></li>
+					<% end %>
+					</ul>
 		  	</div>
 			</label>
 		</div>
@@ -178,10 +194,9 @@
 <br>
 <br>
 <div class="alert alert-success">
-	<h5 class="success"><u> 04/23/18 Changelog:</u></h5>
+	<h5 class="success"><u> 04/24/18 Changelog:</u></h5>
 	<ul>
-		<li>Fixed more typos</li>
-		<li>Added RMCs due to popular demand. They're classified as a steel coaster.</li>
-		<li>Added recommendation to RMC an existing woodie. Some names like "Racer" may have multiples, just pick one</li>
+		<li>Added the ability to narrow down choices by manufacturer</li>
+		<li>Added fFreeform steel coaster. It randomly selects from EVERYTHING. It will contradict itself.</li>
 	</ul>
 </div>

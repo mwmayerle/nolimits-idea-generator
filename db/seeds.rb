@@ -3,7 +3,7 @@ gci = Manufacturer.find_or_create_by!(manufacturer_name: "Great Coasters Interna
 cci = Manufacturer.find_or_create_by!(manufacturer_name: "Custom Coasters International")
 gg = Manufacturer.find_or_create_by!(manufacturer_name: "Gravity Group")
 intamin = Manufacturer.find_or_create_by!(manufacturer_name: "Intamin")
-freeform = Manufacturer.find_or_create_by!(manufacturer_name: "Freeform")
+freeform_woodie = Manufacturer.find_or_create_by!(manufacturer_name: "Freeform_Woodie")
 schwarzkopf = Manufacturer.find_or_create_by!(manufacturer_name: "Schwarzkopf")
 arrow = Manufacturer.find_or_create_by!(manufacturer_name: "Arrow Dynamics (includes 4th dimensions)")
 vekoma = Manufacturer.find_or_create_by!(manufacturer_name: "Vekoma")
@@ -12,6 +12,7 @@ maurer = Manufacturer.find_or_create_by!(manufacturer_name: "Maurer Sohne")
 premier = Manufacturer.find_or_create_by!(manufacturer_name: "Premier")
 mack = Manufacturer.find_or_create_by!(manufacturer_name: "Mack")
 rmc = Manufacturer.find_or_create_by!(manufacturer_name: "RMC")
+freeform_steel = Manufacturer.find_or_create_by!(manufacturer_name: "Freeform Steel")
 
 rmc = Product.find_or_create_by!(
 	manufacturer_id: rmc.id,
@@ -171,20 +172,8 @@ intawood = Product.find_or_create_by!(
 	plausible_elements: ["trenches", "double-up", "double-down", "S-hill", "second largest hill isn't right after the first drop", "double-up/double-down combo", "helix"]
 )
 
-freeform_woodie = Product.find_or_create_by!(
-	manufacturer_id: freeform.id,
-	product_name: "custom modern freeform woodie",
-	material: "wood",
-	tall: 220,
-	short: 50,
-	difficult: false,
-	can_launch: false,
-	typical_elements: ["cyclone layout (see Cyclone ( ͡° ͜ʖ ͡°) )", "linear out and back layout", "twister layout"],
-	plausible_elements: ["trenches", "double-up", "double-down", "steel structure", "S-hill", "corkscrew", "zero-g-roll", "tunnel", "Mr. Twister drop", "big helix (see Beast)", "vertical loop (see Son of Beast)", "second largest hill isn't right after the first drop", "2-seat PTCS", "3-seat PTCS", "Morgan trains", "Timberliners", "overbanked-curve (see Cú Chulainn)", "helix", "double-up/double-down combo"]
-)
-
 freeform_classic_woodie = Product.find_or_create_by!(
-	manufacturer_id: freeform.id,
+	manufacturer_id: freeform_woodie.id,
 	product_name: "custom freeform classic woodie",
 	material: "wood",
 	tall: 111,
@@ -296,8 +285,6 @@ vekoma_motorbike =  Product.find_or_create_by!(
 	launch_options: ["flat launch", "inclined launch", "multiple launches (Manta/Cheetah Hunt style)"],
 	plausible_elements: ["overbanked turn", "zero-g-roll", "trenches", "tunnels", "s-hill", "air hill", "helix", "inclined loop", "Use a chainlift instead"]
 )
-
-arrow = Manufacturer.find_or_create_by!(manufacturer_name: "Arrow Dynamics")
 
 arrow_suspended = Product.find_or_create_by!(
 	manufacturer_id: arrow.id,
@@ -521,4 +508,28 @@ mack_mega_coaster = Product.find_or_create_by!(
 	can_launch: false,
 	typical_elements: ["vertical loop", "zero G roll", "twisting first drop"],
 	plausible_elements: ["zero g roll", "dive loop", "immelman", "corkscrew", "barrel roll", "s-hill", "air hill", "stengal dive", "helix","non-inverting loop (see DC Rivals)"]
+)
+
+freeform_steel = Product.find_or_create_by!(
+	manufacturer_id: freeform_steel.id,
+	product_name: "freeform steel coaster",
+	difficult: false,
+	can_launch: true,
+	tall: 275,
+	short: 100,
+	launch_options: Product.where({material: "steel"}).map { |options| options.launch_options}.uniq.flatten,
+	typical_elements: Product.where({material: "steel"}).map { |options| options.typical_elements}.uniq.flatten,
+	plausible_elements: Product.where({material: "steel"}).map { |options| options.plausible_elements}.uniq.flatten,
+)
+
+freeform_woodie = Product.find_or_create_by!(
+	manufacturer_id: freeform_woodie.id,
+	product_name: "custom modern freeform woodie",
+	material: "wood",
+	tall: 220,
+	short: 50,
+	difficult: false,
+	can_launch: false,
+	typical_elements: ["cyclone layout (see Cyclone ( ͡° ͜ʖ ͡°) )", "linear out and back layout", "twister layout"],
+	plausible_elements: ["trenches", "double-up", "double-down", "steel structure", "S-hill", "corkscrew", "zero-g-roll", "tunnel", "Mr. Twister drop", "big helix (see Beast)", "vertical loop (see Son of Beast)", "second largest hill isn't right after the first drop", "2-seat PTCS", "3-seat PTCS", "Morgan trains", "Timberliners", "overbanked-curve (see Cú Chulainn)", "helix", "double-up/double-down combo"]
 )

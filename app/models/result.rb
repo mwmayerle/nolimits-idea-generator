@@ -139,6 +139,9 @@ class Result < ApplicationRecord
 			when "indifferent"
 			sample_interval = (ride[element_type].length / rand(2.0..4.0)).round
 		end
+		if ride["product_name"] == "freeform steel coaster"
+			sample_interval = (sample_interval / 14.0).round
+		end
 		sample_interval
 	end
 
