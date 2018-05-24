@@ -8,7 +8,6 @@ if Product.all.count > 0
 	prod = Product.all
 end
 
-
 b_and_m = Manufacturer.find_or_create_by!(manufacturer_name: "Bolliger and Mabillard")
 gci = Manufacturer.find_or_create_by!(manufacturer_name: "Great Coasters International")
 cci = Manufacturer.find_or_create_by!(manufacturer_name: "Custom Coasters International")
@@ -528,9 +527,9 @@ freeform_steel = Product.find_or_create_by!(
 	can_launch: true,
 	tall: 300,
 	short: 133,
-	launch_options: Product.where({material: "steel"}).map { |options| options.launch_options.downcase}.uniq.flatten,
-	typical_elements: Product.where({material: "steel"}).map { |options| options.typical_elements.downcase}.uniq.flatten,
-	plausible_elements: Product.where({material: "steel"}).map { |options| options.plausible_elements.downcase}.uniq.flatten,
+	launch_options: Product.where({material: "steel"}).map { |options| options.launch_options}.uniq.flatten,
+	typical_elements: Product.where({material: "steel"}).map { |options| options.typical_elements}.uniq.flatten,
+	plausible_elements: Product.where({material: "steel"}).map { |options| options.plausible_elements}.uniq.flatten,
 )
 
 freeform_woodie = Product.find_or_create_by!(
@@ -542,5 +541,5 @@ freeform_woodie = Product.find_or_create_by!(
 	difficult: false,
 	can_launch: false,
 	typical_elements: ["cyclone layout (see Cyclone ( ͡° ͜ʖ ͡°) )", "linear out and back layout", "twister layout"],
-	plausible_elements: ["trenches", "double-up", "double-down", "steel structure", "S-hill", "corkscrew", "zero-g-roll", "tunnel", "Mr. Twister drop", "big helix (see Beast)", "vertical loop (see Son of Beast)", "second largest hill isn't right after the first drop", "2-seat PTCS", "3-seat PTCS", "Morgan trains", "Timberliners", "overbanked-curve (see Cú Chulainn)", "helix", "double-up/double-down combo"]
+	plausible_elements: ["trenches", "double-up", "double-down", "steel structure", "s-hill", "corkscrew", "zero-g-roll", "tunnel", "Mr. Twister drop", "big helix (see Beast)", "vertical loop (see Son of Beast)", "second largest hill isn't right after the first drop", "2-seat PTCS", "3-seat PTCS", "Morgan trains", "Timberliners", "overbanked-curve (see Cú Chulainn)", "helix", "double-up/double-down combo"]
 )
