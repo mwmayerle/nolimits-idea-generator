@@ -6,6 +6,9 @@
 	<br>
 	<br>
 	<p>Build a <%= @results["product_name"] %> around <%= @results["recommended_height"].to_s %>ft tall.</p>
+	<% if @results["product_name"] == "freeform steel coaster" %>
+		<p>Please note that the freeform steel coaster samples EVERYTHING. There will be repeats and it more than likely won't make sense)</p>
+	<% end %>
 	<br>
 	<% if @results["launch_type"] %>
  		<p>Launch: <%= @results["launch_type"] %></p>
