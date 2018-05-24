@@ -1,8 +1,13 @@
-manu = Manufacturer.all
-prod = Product.all
+if Manufacturer.all.count > 0
+	manu = Manufacturer.all
+	manu.each { |manu| manu.delete }
+end
 
-prod.each { |prod| prod.delete }
-manu.each { |prod| manu.delete }
+if Product.all.count > 0
+	prod.each { |prod| prod.delete }
+	prod = Product.all
+end
+
 
 b_and_m = Manufacturer.find_or_create_by!(manufacturer_name: "Bolliger and Mabillard")
 gci = Manufacturer.find_or_create_by!(manufacturer_name: "Great Coasters International")
