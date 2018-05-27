@@ -171,16 +171,24 @@
 
 		<div class="form-group">
 			<label class="form-check-label">Please check off all of the ride types you do want to build. Note that selecting "Gravity Group" and "steel coasters only" above or other invalid combinations will throw an error and ask you to pick again:
-				<br>
-				<div class="form-check">
-					<ul class="list-unstyled">
-					<% @manufacturers.each do |manufacturer| %>
-						<li><input id="misc-restriction-checkBox" type="checkbox" name="manufacturers[<%= manufacturer.manufacturer_name %>]" checked>
-						<label for="misc-restriction-checkBox"><%= manufacturer.manufacturer_name %> </label></li>
-					<% end %>
-					</ul>
-		  	</div>
 			</label>
+			<br>
+			<br>
+	  		<div id="uncheck-button" class="btn btn-danger">Uncheck All</div>
+	  		<div id="check-button" class="btn btn-danger">Check All</div>
+			<ul class="list-unstyled">
+			<br>
+			<% @manufacturers.each do |manufacturer| %>
+				<div class="form-check">
+					<li>
+						<input class="misc-restriction-checkbox" type="checkbox" name="manufacturers[<%= manufacturer.manufacturer_name %>]" checked>
+						<label class="form-check-label" for="misc-restriction-checkbox">
+							<%= manufacturer.manufacturer_name %>	
+						</label>
+					</li>
+				</div>
+			<% end %>
+			</ul>
 		</div>
 
 	  <input type="submit" class="btn btn-primary" value="Gimme an Idea!">
@@ -194,9 +202,8 @@
 <br>
 <br>
 <div class="alert alert-success">
-	<h5 class="success"><u> 04/24/18 Changelog:</u></h5>
+	<h5 class="success"><u> 04/27/18 Changelog:</u></h5>
 	<ul>
-		<li>Added the ability to narrow down choices by manufacturer</li>
-		<li>Added fFreeform steel coaster. It randomly selects from EVERYTHING. It will contradict itself.</li>
+		<li>Uncheck All and Check All buttons added for ease of use</li>
 	</ul>
 </div>

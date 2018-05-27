@@ -14,3 +14,24 @@
 //= require bootstrap
 //= require rails-ujs
 //= require_tree .
+
+$( document ).ready(function() {
+   uncheckAll();
+   checkAll();
+});
+
+function uncheckAll() {
+	$("#uncheck-button").on('click', () => {
+		$.each($(".misc-restriction-checkbox"), function(checkbox) {
+			$(this).prop('checked', false);
+		});
+	});
+}
+
+function checkAll() {
+	$("#check-button").on('click', () => {
+		$.each($(".misc-restriction-checkbox"), function(checkbox) {
+			$(this).prop('checked', true);
+		});
+	});
+}
