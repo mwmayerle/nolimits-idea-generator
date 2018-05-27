@@ -1,3 +1,9 @@
+<% if flash.now[:error] %>
+	<div class="alert alert-danger">
+		<p class="danger"> <%= flash[:error] %> </p>
+	</div>
+<% end %>
+<br>
 <% if @results %>
 	<h1>NLC Idea Generator Recommends...</h1>
 	<br>

@@ -18,6 +18,7 @@
 $( document ).ready(function() {
    uncheckAll();
    checkAll();
+   ensureChecked();
 });
 
 function uncheckAll() {
@@ -26,7 +27,7 @@ function uncheckAll() {
 			$(this).prop('checked', false);
 		});
 	});
-}
+};
 
 function checkAll() {
 	$("#check-button").on('click', () => {
@@ -34,4 +35,4 @@ function checkAll() {
 			$(this).prop('checked', true);
 		});
 	});
-}
+};
